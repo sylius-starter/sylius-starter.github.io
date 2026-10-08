@@ -26,7 +26,52 @@
     "titleEm": "Your store,",
     "titleRest": "live in a matter of days.",
     "leadHtml": "Sylius is ready in minutes, your full store in days. Full control over your data, <strong>zero commission on sales</strong> and an entire ecosystem to support you.",
-    "cta": "Get expert support →"
+    "cta": "Get expert support →",
+    "feats": [
+      {
+        "icon": "code",
+        "title": "MIT license",
+        "sub": "The code is yours"
+      },
+      {
+        "icon": "server",
+        "title": "Hosting",
+        "sub": "of your choice"
+      },
+      {
+        "icon": "check",
+        "title": "Zero commission",
+        "sub": "on your sales, for life"
+      }
+    ],
+    "visual": {
+      "statValue": "0%",
+      "statLabel": "commission on your sales",
+      "codeTitle": "The code is yours",
+      "codeSub": "MIT license, hosting of your choice",
+      "alt": "Example Sylius store: product page"
+    }
+  },
+  "logos": {
+    "label": "Backed by the Sylius ecosystem 🇫🇷",
+    "items": [
+      {
+        "name": "Cushman & Wakefield",
+        "src": ""
+      },
+      {
+        "name": "Orpi",
+        "src": ""
+      },
+      {
+        "name": "dotJS",
+        "src": ""
+      },
+      {
+        "name": "Deezer",
+        "src": ""
+      }
+    ]
   },
   "own": {
     "eyebrow": "Rent or own",
@@ -156,7 +201,7 @@
         "html": "<b>A back office in your hands.</b> Hide or reorder menu entries without writing code."
       },
       {
-        "html": "<b>An environment that grows with the project.</b> Redis, Mailpit, RabbitMQ added to your project, one service at a time."
+        "html": "<b>An environment that grows with the project.</b> Redis, Mailpit, RabbitMQ added to your project in a single command."
       }
     ],
     "ctaGithub": "View on GitHub ↗",
@@ -165,19 +210,17 @@
     "termLines": [
       { "type": "cmd", "text": "castor sylius:init" },
       { "type": "ok", "text": "✅ Docker · Sylius · migrated DB · assets · fixtures · Behat" },
-      { "type": "cmd", "text": "castor sylius:add cms invoicing wishlist" },
-      { "type": "dim", "text": "install · configure · migrate · build · cache clear" },
-      { "type": "ok", "text": "✅ 3 plugins enabled" },
-      { "type": "cmd", "text": "castor sylius:payment-gateways:setup stripe paypal" },
-      { "type": "ok", "text": "✅ gateways configured" },
-      { "type": "cmd", "text": "castor sylius:theme:setup canvas" },
-      { "type": "ok", "text": "✅ storefront theme applied" },
+      { "type": "dim", "text": "→ project ready for development" },
+      { "type": "cmd", "text": "castor sylius:add cms payments" },
+      { "type": "dim", "text": "install · configure · migrate · build" },
+      { "type": "ok", "text": "✅ 3 features enabled" },
+      { "type": "cmd", "text": "castor sylius:remove invoicing" },
+      { "type": "dim", "text": "clean up entities · roll back migrations" },
+      { "type": "ok", "text": "✅ feature removed cleanly" },
       { "type": "cmd", "text": "castor sylius:menu:remove marketing" },
-      { "type": "ok", "text": "✅ back office adapted, no Symfony" },
-      { "type": "cmd", "text": "castor sylius:b2b:enable hide_prices customer_validation" },
-      { "type": "ok", "text": "✅ B2B: prices hidden, admin-validated accounts" },
-      { "type": "cmd", "text": "castor docker:service:install redis" },
-      { "type": "ok", "text": "✅ registered in castor.php and started" }
+      { "type": "ok2", "text": "✅ back office adapted, without a line of Symfony" },
+      { "type": "cmd", "text": "castor sylius:docker:add redis mailpit rabbitmq" },
+      { "type": "ok2", "text": "✅ 3 services added to the environment" }
     ]
   },
   "tutoriels": {

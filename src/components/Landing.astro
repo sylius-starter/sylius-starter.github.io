@@ -8,6 +8,14 @@ interface Props {
 }
 
 const { locale, t } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const asset = (path: string) => `${base}/${path.replace(/^\//, '')}`;
+
+const heroIcons: Record<string, string> = {
+  code: '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 8 2.5 16 9 24"/><path d="M23 8l6.5 8L23 24"/><path d="M18.5 5.5l-5 21"/></svg>',
+  server: '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="25" height="9" rx="3.5"/><rect x="3.5" y="18" width="25" height="9" rx="3.5"/><path d="M8.5 9.5h4M8.5 22.5h4"/><circle cx="23" cy="9.5" r=".6" fill="currentColor"/><circle cx="23" cy="22.5" r=".6" fill="currentColor"/></svg>',
+  check: '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="16" r="13"/><path d="m10.5 16.5 3.8 3.8 7.4-8"/></svg>',
+};
 ---
 
 <nav>
@@ -26,20 +34,64 @@ const { locale, t } = Astro.props;
 </nav>
 
 <header class="hero" id="top">
-  <div class="wrap">
-    <p class="hook reveal">{t.hero.hook}</p>
-    <h1 class="reveal"><em>{t.hero.titleEm}</em> {t.hero.titleRest}</h1>
-    <p class="lead reveal" set:html={t.hero.leadHtml} />
-    <div class="hero-cta reveal">
-      <a href="#offre" class="btn btn-primary">{t.hero.cta}</a>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="hook reveal">{t.hero.hook}</p>
+      <h1 class="reveal"><em>{t.hero.titleEm}</em> {t.hero.titleRest}</h1>
+      <p class="lead reveal" set:html={t.hero.leadHtml} />
+      <div class="hero-cta reveal">
+        <a href="#offre" class="btn btn-primary">{t.hero.cta}</a>
+      </div>
+      <ul class="hero-feats reveal">
+        {t.hero.feats.map((f) => (
+          <li>
+            <Fragment set:html={heroIcons[f.icon]} />
+            <span><span class="hf-t">{f.title}</span><span class="hf-s">{f.sub}</span></span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="hv-stage">
+        <img
+          class="hv-shot"
+          src={asset('images/hero-storefront.jpg')}
+          alt={t.hero.visual.alt}
+          width="544"
+          height="452"
+          loading="eager"
+        />
+        <div class="hv-card hv-stat">
+          <b>{t.hero.visual.statValue}</b>
+          <span>{t.hero.visual.statLabel}</span>
+        </div>
+        <div class="hv-card hv-code">
+          <b>{t.hero.visual.codeTitle}</b>
+          <span>{t.hero.visual.codeSub}</span>
+        </div>
+      </div>
     </div>
   </div>
 </header>
 
+<section class="logos-sec" aria-label={t.logos.label}>
+  <div class="wrap logos-in">
+    <p class="logos-label">{t.logos.label}</p>
+    <div class="logos-row">
+      {t.logos.items.map((logo) => (
+        <span class="logo-mark">
+          {logo.src ? <img src={asset(logo.src)} alt={logo.name} loading="lazy" /> : logo.name}
+        </span>
+      ))}
+    </div>
+  </div>
+</section>
+
 <section class="own-sec sec-muted" id="posseder">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="eyebrow"><span class="n">01</span>{t.own.eyebrow}</p>
+      <p class="eyebrow">{t.own.eyebrow}</p>
       <h2>{t.own.title}</h2>
       <p class="intro">{t.own.intro}</p>
     </div>
@@ -67,7 +119,7 @@ const { locale, t } = Astro.props;
 
     <div class="own-cta reveal">
       <p class="own-cta-lead" set:html={t.own.ctaLeadHtml} />
-      <a href="#offre" class="btn btn-primary">{t.own.cta}</a>
+      <a href="#offre" class="btn btn-em">{t.own.cta}</a>
     </div>
   </div>
 </section>
@@ -75,7 +127,7 @@ const { locale, t } = Astro.props;
 <section class="points-sec" id="sylius">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="eyebrow"><span class="n">02</span>{t.sylius.eyebrow}</p>
+      <p class="eyebrow">{t.sylius.eyebrow}</p>
       <h2>{t.sylius.title}</h2>
       <p class="sylius-intro">
         {t.sylius.introBefore}
@@ -101,16 +153,16 @@ const { locale, t } = Astro.props;
   <div class="wrap">
     <div class="exp-grid">
       <div class="section-head reveal">
-        <p class="eyebrow"><span class="n">03</span>{t.experts.eyebrow}</p>
+        <p class="eyebrow">{t.experts.eyebrow}</p>
         <h2>{t.experts.title}</h2>
         <p class="intro">{t.experts.intro}</p>
       </div>
 
       <div class="benefits reveal">
-        {t.experts.benefits.map((b, i) => (
+        {t.experts.benefits.map((b) => (
           <div class="benefit">
-            <span class="bn">{String(i + 1).padStart(2, '0')}</span>
-            <div><span class="bk">{b.title}</span><p>{b.p}</p></div>
+            <span class="bk">{b.title}</span>
+            <p>{b.p}</p>
           </div>
         ))}
       </div>
@@ -121,16 +173,16 @@ const { locale, t } = Astro.props;
 <section class="stories-sec" id="success-stories">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="eyebrow"><span class="n">04</span>{t.stories.eyebrow}</p>
+      <p class="eyebrow">{t.stories.eyebrow}</p>
       <h2>{t.stories.title}</h2>
     </div>
 
-    <article class="story-card story-card--placeholder reveal">
+    <article class="story-card reveal">
       <div class="story-visual" aria-hidden="true">
         <span class="story-visual-label">{t.stories.visual}</span>
       </div>
       <div class="story-body">
-        <span class="badge-soon">{t.stories.badge}</span>
+        <span class="story-kicker">{t.stories.badge}</span>
         <h3>{t.stories.cardTitle}</h3>
         <p>{t.stories.cardP}</p>
         <div class="story-cta">
@@ -144,7 +196,7 @@ const { locale, t } = Astro.props;
 <section class="paths-sec sec-muted" id="chemins">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="eyebrow"><span class="n">05</span>{t.paths.eyebrow}</p>
+      <p class="eyebrow">{t.paths.eyebrow}</p>
       <h2>{t.paths.title}</h2>
       <p class="intro">{t.paths.intro}</p>
     </div>
@@ -158,7 +210,7 @@ const { locale, t } = Astro.props;
             <li><span class="mark">→</span><span class="t">{item}</span></li>
           ))}
         </ul>
-        <div class="side-cta"><a href="#offre" class="btn btn-light">{t.paths.specialistCta}</a></div>
+        <div class="side-cta"><a href="#offre" class="btn btn-em">{t.paths.specialistCta}</a></div>
       </div>
       <div class="side rent">
         <p class="path-who">{t.paths.devWho} <span class="path-or">{t.paths.devOr}</span> {t.paths.devWho2}</p>
@@ -170,7 +222,7 @@ const { locale, t } = Astro.props;
         </ul>
         <div class="side-cta">
           <a href="https://github.com/castor-php/sylius" target="_blank" rel="noopener" class="btn btn-primary">{t.paths.devCtaRepo}</a>
-          <a href="#tutoriels" class="btn btn-ghost">{t.paths.devCtaTutorials}</a>
+          <a href="#tutoriels" class="btn btn-light">{t.paths.devCtaTutorials}</a>
         </div>
       </div>
     </div>
@@ -180,7 +232,7 @@ const { locale, t } = Astro.props;
 <section class="found sec-dark" id="fondation">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="eyebrow"><span class="n">06</span>{t.found.eyebrow}</p>
+      <p class="eyebrow">{t.found.eyebrow}</p>
       <h2>{t.found.title}</h2>
     </div>
     <div class="grid">
@@ -202,18 +254,20 @@ const { locale, t } = Astro.props;
 
       <div class="term reveal" aria-hidden="true">
         <div class="bar">
-          <i style="background:#E7695B"></i><i style="background:#E9B44C"></i><i style="background:#5BC98A"></i>
+          <i style="background:#1dcada"></i><i style="background:#1dcada"></i><i style="background:#1b3d42"></i>
           <span class="p">{t.found.termPath}</span>
         </div>
         <div class="body">
           {t.found.termLines.map((line, i, arr) => {
             const prev = arr[i - 1];
-            const needsBr = i > 0 && prev?.type === 'ok' && line.type === 'cmd';
+            const isOk = (type?: string) => type === 'ok' || type === 'ok2';
+            const needsBr = i > 0 && isOk(prev?.type) && line.type === 'cmd';
             return (
               <>
                 {needsBr && <br />}
                 {line.type === 'cmd' && <div class="cmd">{line.text}</div>}
                 {line.type === 'ok' && <div class="ok">{line.text}</div>}
+                {line.type === 'ok2' && <div class="ok2">{line.text}</div>}
                 {line.type === 'dim' && <div class="dim">{line.text}</div>}
               </>
             );
@@ -229,7 +283,7 @@ const { locale, t } = Astro.props;
 <section class="tutoriels-sec" id="tutoriels">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="eyebrow"><span class="n">07</span>{t.tutoriels.eyebrow}</p>
+      <p class="eyebrow">{t.tutoriels.eyebrow}</p>
       <h2>{t.tutoriels.title}</h2>
     </div>
 
@@ -257,7 +311,7 @@ const { locale, t } = Astro.props;
       <p>{t.event.p}</p>
     </div>
     <div class="event-cta reveal">
-      <a href="https://ps-summit.com" target="_blank" rel="noopener" class="btn btn-light">{t.event.cta}</a>
+      <a href="https://ps-summit.com" target="_blank" rel="noopener" class="btn btn-ghost">{t.event.cta}</a>
     </div>
   </div>
 </section>
@@ -266,7 +320,7 @@ const { locale, t } = Astro.props;
   <div class="wrap">
     <div class="section-head reveal">
       <div>
-        <p class="eyebrow"><span class="n">08</span>{t.offer.eyebrow}</p>
+        <p class="eyebrow">{t.offer.eyebrow}</p>
         <h2>{t.offer.title}</h2>
       </div>
     </div>
@@ -313,10 +367,10 @@ const { locale, t } = Astro.props;
         <div class="col">
           <h4>{t.footer.resources}</h4>
           <a href="https://github.com/castor-php/sylius" target="_blank" rel="noopener">GitHub ↗</a>
-          <a href="https://github.com/castor-php/sylius#readme" target="_blank" rel="noopener">Documentation ↗</a>
+          <a href="https://github.com/castor-php/sylius#readme" target="_blank" rel="noopener" class="hl">Documentation ↗</a>
           <a href="#tutoriels">{t.nav.tutoriels}</a>
           <a href="https://sylius.com" target="_blank" rel="noopener">Sylius.com ↗</a>
-          <a href="https://ps-summit.com" target="_blank" rel="noopener">PS Summit 2026 ↗</a>
+          <a href="https://ps-summit.com" target="_blank" rel="noopener" class="hl">PS Summit 2026 ↗</a>
         </div>
       </div>
     </div>
