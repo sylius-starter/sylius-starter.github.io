@@ -1,0 +1,33 @@
+---
+import { localeConfig, localePath, type Locale } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+  label: string;
+}
+
+const { locale, label } = Astro.props;
+const selectId = `lang-select-${locale}`;
+---
+
+<div class="lang-select">
+  <label for={selectId} class="lang-select__label">{label}</label>
+  <select id={selectId} class="lang-select__control" name="language">
+    {localeConfig.map((l) => (
+      <option value={localePath(l.code)} selected={l.code === locale} lang={l.hreflang}>
+        {l.label}
+      </option>
+    ))}
+  </select>
+</div>
+
+<script>
+  document.querySelectorAll('.lang-select__control').forEach((select) => {
+    if (select.dataset.bound === 'true') return;
+    select.dataset.bound = 'true';
+    select.addEventListener('change', () => {
+      const url = select.value;
+      if (url) window.location.href = url;
+    });
+  });
+</script>

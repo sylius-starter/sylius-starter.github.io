@@ -1,0 +1,57 @@
+---
+import { defaultLocale, localeConfig, localePath } from '../i18n/utils';
+import { getTranslations } from '../i18n/utils';
+
+const t = getTranslations('en');
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const defaultPath = localePath(defaultLocale);
+const localeMatchers = localeConfig.map((l) => ({
+  code: l.code,
+  match: l.match,
+  path: localePath(l.code),
+}));
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>{t.redirect.title}</title>
+  <meta http-equiv="refresh" content={`0;url=${defaultPath}`} />
+  <script is:inline define:vars={{ base, localeMatchers, defaultPath }}>
+    (function () {
+      var lang = (navigator.language || '').toLowerCase();
+      var target = defaultPath;
+      for (var i = 0; i < localeMatchers.length; i++) {
+        var entry = localeMatchers[i];
+        for (var j = 0; j < entry.match.length; j++) {
+          var prefix = entry.match[j];
+          if (lang === prefix || lang.indexOf(prefix + '-') === 0) {
+            target = entry.path;
+            break;
+          }
+        }
+        if (target !== defaultPath) break;
+      }
+      if (location.pathname !== target) location.replace(target);
+    })();
+  </script>
+  <style>
+    body { font-family: system-ui, sans-serif; padding: 2rem; color: #2a2024; }
+    a { color: #b54878; }
+  </style>
+</head>
+<body>
+  <p>
+    {t.redirect.manual}
+    {localeConfig.map((l, i) => (
+      <>
+        {i > 0 && ' · '}
+        <a href={localePath(l.code)}>{l.label}</a>
+      </>
+    ))}
+  </p>
+</body>
+</html>

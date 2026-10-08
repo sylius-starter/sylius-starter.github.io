@@ -1,0 +1,36 @@
+---
+import '../styles/global.css';
+import type { Locale } from '../i18n/utils';
+import { alternateUrls, defaultLocale, localeConfig } from '../i18n/utils';
+import type { Translations } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+  t: Translations;
+}
+
+const { locale, t } = Astro.props;
+const alternates = alternateUrls();
+const canonical = alternates[locale];
+---
+
+<!doctype html>
+<html lang={locale}>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{t.meta.title}</title>
+    <meta name="description" content={t.meta.description} />
+    <link rel="canonical" href={canonical} />
+    {localeConfig.map((l) => (
+      <link rel="alternate" hreflang={l.hreflang} href={alternates[l.code]} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={alternates[defaultLocale]} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800;900&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <slot />
+</body>
+</html>
