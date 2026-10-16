@@ -10,24 +10,19 @@ interface Props {
 const { locale, t } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const asset = (path: string) => `${base}/${path.replace(/^\//, '')}`;
-
-const heroIcons: Record<string, string> = {
-  code: '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 8 2.5 16 9 24"/><path d="M23 8l6.5 8L23 24"/><path d="M18.5 5.5l-5 21"/></svg>',
-  server: '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="25" height="9" rx="3.5"/><rect x="3.5" y="18" width="25" height="9" rx="3.5"/><path d="M8.5 9.5h4M8.5 22.5h4"/><circle cx="23" cy="9.5" r=".6" fill="currentColor"/><circle cx="23" cy="22.5" r=".6" fill="currentColor"/></svg>',
-  check: '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="16" r="13"/><path d="m10.5 16.5 3.8 3.8 7.4-8"/></svg>',
-};
+const repo = 'https://github.com/sylius-starter/sylius-starter';
+const docs = `${repo}#readme`;
 ---
 
 <nav>
   <div class="wrap nav-in">
     <a href="#top" class="brand">Sylius Starter<span class="dot"></span></a>
     <div class="nav-links">
-      <a href="#posseder">{t.nav.posseder}</a>
-      <a href="#reseau">{t.nav.experts}</a>
-      <a href="#success-stories">{t.nav.stories}</a>
+      <a href="#saas-vs-sylius">{t.nav.posseder}</a>
+      <a href="#votre-projet">{t.nav.paths}</a>
       <a href="#fondation">{t.nav.starter}</a>
-      <a href="#tutoriels">{t.nav.tutoriels}</a>
-      <a href="https://github.com/castor-php/sylius" target="_blank" rel="noopener" class="btn btn-ghost nav-github">{t.nav.github}</a>
+      <a href="#ecosysteme">{t.nav.ecosystem}</a>
+      <a href={repo} target="_blank" rel="noopener" class="btn btn-ghost nav-github">{t.nav.github}</a>
       <a href="#offre" class="btn btn-primary nav-cta">{t.nav.cta}</a>
     </div>
   </div>
@@ -36,69 +31,38 @@ const heroIcons: Record<string, string> = {
 <header class="hero" id="top">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="hook reveal">{t.hero.hook}</p>
-      <h1 class="reveal"><em>{t.hero.titleEm}</em> {t.hero.titleRest}</h1>
-      <p class="lead reveal" set:html={t.hero.leadHtml} />
-      <div class="hero-cta reveal">
+      <h1>{t.hero.title}</h1>
+      <p class="lead" set:html={t.hero.leadHtml} />
+      <div class="hero-cta">
         <a href="#offre" class="btn btn-primary">{t.hero.cta}</a>
+        <a href={repo} target="_blank" rel="noopener" class="btn btn-ghost">{t.hero.ctaRepo}</a>
       </div>
-      <ul class="hero-feats reveal">
-        {t.hero.feats.map((f) => (
-          <li>
-            <Fragment set:html={heroIcons[f.icon]} />
-            <span><span class="hf-t">{f.title}</span><span class="hf-s">{f.sub}</span></span>
-          </li>
-        ))}
-      </ul>
     </div>
 
-    <div class="hero-visual reveal">
+    <div class="hero-visual">
       <div class="hv-stage">
         <img
           class="hv-shot"
           src={asset('images/hero-storefront.jpg')}
-          alt={t.hero.visual.alt}
+          alt={t.hero.alt}
           width="544"
           height="452"
           loading="eager"
         />
-        <div class="hv-card hv-stat">
-          <b>{t.hero.visual.statValue}</b>
-          <span>{t.hero.visual.statLabel}</span>
-        </div>
-        <div class="hv-card hv-code">
-          <b>{t.hero.visual.codeTitle}</b>
-          <span>{t.hero.visual.codeSub}</span>
-        </div>
       </div>
     </div>
   </div>
 </header>
 
-<section class="logos-sec" aria-label={t.logos.label}>
-  <div class="wrap logos-in">
-    <p class="logos-label">{t.logos.label}</p>
-    <div class="logos-row">
-      {t.logos.items.map((logo) => (
-        <span class="logo-mark">
-          {logo.src ? <img src={asset(logo.src)} alt={logo.name} loading="lazy" /> : logo.name}
-        </span>
-      ))}
-    </div>
-  </div>
-</section>
-
-<section class="own-sec sec-muted" id="posseder">
+<section class="own-sec sec-muted" id="saas-vs-sylius">
   <div class="wrap">
-    <div class="section-head reveal">
-      <p class="eyebrow">{t.own.eyebrow}</p>
+    <div class="section-head">
       <h2>{t.own.title}</h2>
       <p class="intro">{t.own.intro}</p>
     </div>
 
-    <div class="split reveal">
+    <div class="split">
       <div class="side rent">
-        <span class="tag">{t.own.rentTag}</span>
         <h3>{t.own.rentTitle}</h3>
         <ul class="plist">
           {t.own.rentItems.map((item) => (
@@ -107,7 +71,6 @@ const heroIcons: Record<string, string> = {
         </ul>
       </div>
       <div class="side own">
-        <span class="tag">{t.own.ownTag}</span>
         <h3>{t.own.ownTitle}</h3>
         <ul class="plist">
           {t.own.ownItems.map((item) => (
@@ -117,49 +80,127 @@ const heroIcons: Record<string, string> = {
       </div>
     </div>
 
-    <div class="own-cta reveal">
-      <p class="own-cta-lead" set:html={t.own.ctaLeadHtml} />
-      <a href="#offre" class="btn btn-em">{t.own.cta}</a>
+    <div class="own-cta">
+      <a href="#offre" class="btn btn-em">{t.own.migrate}</a>
     </div>
   </div>
 </section>
 
-<section class="points-sec" id="sylius">
+<section class="sov-sec" id="souverainete">
   <div class="wrap">
-    <div class="section-head reveal">
-      <p class="eyebrow">{t.sylius.eyebrow}</p>
-      <h2>{t.sylius.title}</h2>
-      <p class="sylius-intro">
-        {t.sylius.introBefore}
-        <a href="https://sylius.com" target="_blank" rel="noopener">{t.sylius.introLink}</a>.
-      </p>
+    <div class="section-head">
+      <h2>{t.sovereignty.title}</h2>
+      <p class="intro">{t.sovereignty.intro}</p>
     </div>
 
-    <h3 class="starter-shift reveal">{t.sylius.shift}</h3>
-
-    <div class="card-grid">
-      {t.sylius.cards.map((card) => (
-        <div class="hcard reveal">
-          <span class="n">{card.n}</span>
-          <h3>{card.title}</h3>
-          <p>{card.p}</p>
+    <div class="sov-grid">
+      {t.sovereignty.options.map((option) => (
+        <div class="sov-card">
+          <span class="tag">{option.tag}</span>
+          <h3>{option.title}</h3>
+          <p>{option.p}</p>
         </div>
       ))}
     </div>
+
+    <div class="side own sov-promise">
+      <h3>{t.sovereignty.promiseTitle}</h3>
+      <ul class="plist">
+        {t.sovereignty.promiseItems.map((item) => (
+          <li><span class="mark">✓</span><span class="t">{item}</span></li>
+        ))}
+      </ul>
+    </div>
   </div>
 </section>
 
-<section class="experts sec-muted" id="reseau">
+<section class="paths-sec sec-muted" id="votre-projet">
   <div class="wrap">
-    <div class="exp-grid">
-      <div class="section-head reveal">
-        <p class="eyebrow">{t.experts.eyebrow}</p>
-        <h2>{t.experts.title}</h2>
-        <p class="intro">{t.experts.intro}</p>
+    <div class="section-head">
+      <h2>{t.paths.title}</h2>
+    </div>
+
+    <div class="split">
+      <div class="side rent">
+        <p class="path-who">{t.paths.devWho}</p>
+        <h3>{t.paths.devTitle}</h3>
+        <ul class="plist">
+          {t.paths.devItems.map((item) => (
+            <li><span class="mark">→</span><span class="t" set:html={item} /></li>
+          ))}
+        </ul>
+        <div class="side-cta">
+          <a href={repo} target="_blank" rel="noopener" class="btn btn-primary">{t.paths.devCtaRepo}</a>
+          <a href={docs} target="_blank" rel="noopener" class="btn btn-light">{t.paths.devCtaDoc}</a>
+        </div>
+      </div>
+      <div class="side own">
+        <p class="path-who">{t.paths.specialistWho}</p>
+        <h3>{t.paths.specialistTitle}</h3>
+        <ul class="plist">
+          {t.paths.specialistItems.map((item) => (
+            <li><span class="mark">→</span><span class="t">{item}</span></li>
+          ))}
+        </ul>
+        <div class="side-cta"><a href="#offre" class="btn btn-em">{t.paths.specialistCta}</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="found sec-dark" id="fondation">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>{t.found.title}</h2>
+    </div>
+    <div class="grid">
+      <div>
+        <p class="lead" set:html={t.found.leadHtml} />
+        <ul class="feats">
+          {t.found.feats.map((feat) => (
+            <li>
+              <span class="k">–</span>
+              <span class="ft" set:html={feat.html} />
+            </li>
+          ))}
+        </ul>
+        <div class="found-cta">
+          <a href={repo} target="_blank" rel="noopener" class="btn btn-em">{t.found.ctaGithub}</a>
+          <a href={docs} target="_blank" rel="noopener" class="btn btn-light">{t.found.ctaDoc}</a>
+        </div>
       </div>
 
-      <div class="benefits reveal">
-        {t.experts.benefits.map((b) => (
+      <div class="term" aria-hidden="true">
+        <div class="bar">
+          <i style="background:#1dcada"></i><i style="background:#1dcada"></i><i style="background:#1b3d42"></i>
+          <span class="p">{t.found.termPath}</span>
+        </div>
+        <div class="body">
+          {t.found.termLines.map((line, i) => (
+            <>
+              {i > 0 && line.type === 'cmd' && <br />}
+              <div class={line.type}>{line.text}</div>
+            </>
+          ))}
+          <br />
+          <div class="cmd"><span class="cursor"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="experts sec-muted" id="ecosysteme">
+  <div class="wrap">
+    <div class="exp-grid">
+      <div class="section-head">
+        <h2>{t.ecosystem.title}</h2>
+        <p class="intro">{t.ecosystem.intro}</p>
+        <p class="exp-link"><a href="https://sylius.com" target="_blank" rel="noopener">{t.ecosystem.link}</a></p>
+      </div>
+
+      <div class="benefits">
+        {t.ecosystem.benefits.map((b) => (
           <div class="benefit">
             <span class="bk">{b.title}</span>
             <p>{b.p}</p>
@@ -170,164 +211,29 @@ const heroIcons: Record<string, string> = {
   </div>
 </section>
 
-<section class="stories-sec" id="success-stories">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="eyebrow">{t.stories.eyebrow}</p>
-      <h2>{t.stories.title}</h2>
-    </div>
-
-    <article class="story-card reveal">
-      <div class="story-visual" aria-hidden="true">
-        <span class="story-visual-label">{t.stories.visual}</span>
-      </div>
-      <div class="story-body">
-        <span class="story-kicker">{t.stories.badge}</span>
-        <h3>{t.stories.cardTitle}</h3>
-        <p>{t.stories.cardP}</p>
-        <div class="story-cta">
-          <a href="#offre" class="btn btn-primary">{t.stories.cta}</a>
-        </div>
-      </div>
-    </article>
-  </div>
-</section>
-
-<section class="paths-sec sec-muted" id="chemins">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="eyebrow">{t.paths.eyebrow}</p>
-      <h2>{t.paths.title}</h2>
-      <p class="intro">{t.paths.intro}</p>
-    </div>
-
-    <div class="split reveal">
-      <div class="side own">
-        <p class="path-who">{t.paths.specialistWho} <span class="path-or">{t.paths.specialistOr}</span> {t.paths.specialistWho2}</p>
-        <h3>{t.paths.specialistTitle}</h3>
-        <ul class="plist">
-          {t.paths.specialistItems.map((item) => (
-            <li><span class="mark">→</span><span class="t">{item}</span></li>
-          ))}
-        </ul>
-        <div class="side-cta"><a href="#offre" class="btn btn-em">{t.paths.specialistCta}</a></div>
-      </div>
-      <div class="side rent">
-        <p class="path-who">{t.paths.devWho} <span class="path-or">{t.paths.devOr}</span> {t.paths.devWho2}</p>
-        <h3>{t.paths.devTitle}</h3>
-        <ul class="plist">
-          {t.paths.devItems.map((item) => (
-            <li><span class="mark">→</span><span class="t" set:html={item} /></li>
-          ))}
-        </ul>
-        <div class="side-cta">
-          <a href="https://github.com/castor-php/sylius" target="_blank" rel="noopener" class="btn btn-primary">{t.paths.devCtaRepo}</a>
-          <a href="#tutoriels" class="btn btn-light">{t.paths.devCtaTutorials}</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="found sec-dark" id="fondation">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="eyebrow">{t.found.eyebrow}</p>
-      <h2>{t.found.title}</h2>
-    </div>
-    <div class="grid">
-      <div class="reveal">
-        <p class="lead" set:html={t.found.leadHtml} />
-        <ul class="feats">
-          {t.found.feats.map((feat, i) => (
-            <li>
-              <span class="k">{String(i + 1).padStart(2, '0')}</span>
-              <span class="ft" set:html={feat.html} />
-            </li>
-          ))}
-        </ul>
-        <div class="found-cta">
-          <a href="https://github.com/castor-php/sylius" target="_blank" rel="noopener" class="btn btn-em">{t.found.ctaGithub}</a>
-          <a href="https://github.com/castor-php/sylius#readme" target="_blank" rel="noopener" class="btn btn-light">{t.found.ctaDoc}</a>
-        </div>
-      </div>
-
-      <div class="term reveal" aria-hidden="true">
-        <div class="bar">
-          <i style="background:#1dcada"></i><i style="background:#1dcada"></i><i style="background:#1b3d42"></i>
-          <span class="p">{t.found.termPath}</span>
-        </div>
-        <div class="body">
-          {t.found.termLines.map((line, i, arr) => {
-            const prev = arr[i - 1];
-            const isOk = (type?: string) => type === 'ok' || type === 'ok2';
-            const needsBr = i > 0 && isOk(prev?.type) && line.type === 'cmd';
-            return (
-              <>
-                {needsBr && <br />}
-                {line.type === 'cmd' && <div class="cmd">{line.text}</div>}
-                {line.type === 'ok' && <div class="ok">{line.text}</div>}
-                {line.type === 'ok2' && <div class="ok2">{line.text}</div>}
-                {line.type === 'dim' && <div class="dim">{line.text}</div>}
-              </>
-            );
-          })}
-          <br />
-          <div class="cmd"><span class="cursor"></span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="tutoriels-sec" id="tutoriels">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="eyebrow">{t.tutoriels.eyebrow}</p>
-      <h2>{t.tutoriels.title}</h2>
-    </div>
-
-    <div class="card-grid">
-      {t.tutoriels.cards.map((card) => (
-        <div class="hcard soon reveal">
-          <span class="badge-soon">{card.badge}</span>
-          <h3>{card.title}</h3>
-          <p>{card.p}</p>
-        </div>
-      ))}
-    </div>
-
-    <div class="tutoriels-cta reveal">
-      <a href="https://github.com/castor-php/sylius#readme" target="_blank" rel="noopener" class="btn btn-primary">{t.tutoriels.cta}</a>
-    </div>
-  </div>
-</section>
-
 <section class="event-banner" id="ps-summit">
   <div class="wrap event-inner">
-    <div class="reveal">
-      <p class="eyebrow">{t.event.eyebrow}</p>
+    <div>
+      <p class="eyebrow">{t.event.date}</p>
       <h2>{t.event.title}</h2>
       <p>{t.event.p}</p>
     </div>
-    <div class="event-cta reveal">
-      <a href="https://ps-summit.com" target="_blank" rel="noopener" class="btn btn-ghost">{t.event.cta}</a>
+    <div class="event-cta">
+      <a href="https://www.ps-summit.com" target="_blank" rel="noopener" class="btn btn-ghost">{t.event.cta}</a>
     </div>
   </div>
 </section>
 
 <section class="offer sec-muted" id="offre">
   <div class="wrap">
-    <div class="section-head reveal">
-      <div>
-        <p class="eyebrow">{t.offer.eyebrow}</p>
-        <h2>{t.offer.title}</h2>
-      </div>
+    <div class="section-head">
+      <h2>{t.offer.title}</h2>
+      <p class="intro">{t.offer.intro}</p>
     </div>
 
     <div class="plans">
       {t.offer.plans.map((plan) => (
-        <div class="plan reveal">
+        <div class="plan">
           <div class="name">
             <h3>{plan.name}</h3>
             <span class="price">{plan.price}</span>
@@ -352,31 +258,25 @@ const heroIcons: Record<string, string> = {
     <div class="foot">
       <div>
         <a href="#top" class="brand">Sylius Starter<span class="dot"></span></a>
-        <p class="about">{t.footer.about}</p>
         <LangSwitcher locale={locale} label={t.lang.label} />
       </div>
       <div class="cols">
         <div class="col">
           <h4>{t.footer.product}</h4>
-          <a href="#posseder">{t.nav.posseder}</a>
+          <a href="#saas-vs-sylius">{t.nav.posseder}</a>
+          <a href="#votre-projet">{t.nav.paths}</a>
           <a href="#fondation">{t.nav.starter}</a>
-          <a href="#success-stories">{t.nav.stories}</a>
-          <a href="#reseau">{t.experts.eyebrow}</a>
+          <a href="#ecosysteme">{t.nav.ecosystem}</a>
           <a href="#offre">{t.nav.cta}</a>
         </div>
         <div class="col">
           <h4>{t.footer.resources}</h4>
-          <a href="https://github.com/castor-php/sylius" target="_blank" rel="noopener">GitHub ↗</a>
-          <a href="https://github.com/castor-php/sylius#readme" target="_blank" rel="noopener" class="hl">Documentation ↗</a>
-          <a href="#tutoriels">{t.nav.tutoriels}</a>
+          <a href={repo} target="_blank" rel="noopener">GitHub ↗</a>
+          <a href={docs} target="_blank" rel="noopener" class="hl">Documentation ↗</a>
           <a href="https://sylius.com" target="_blank" rel="noopener">Sylius.com ↗</a>
-          <a href="https://ps-summit.com" target="_blank" rel="noopener" class="hl">PS Summit 2026 ↗</a>
+          <a href="https://www.ps-summit.com" target="_blank" rel="noopener" class="hl">PS Summit 2026 ↗</a>
         </div>
       </div>
-    </div>
-    <div class="legal">
-      <span>{t.footer.legal1}</span>
-      <span>{t.footer.legal2}</span>
     </div>
   </div>
 </footer>

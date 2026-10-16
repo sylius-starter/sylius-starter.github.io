@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Sylius Starter: start in minutes, launch in days",
-    "description": "Sylius Starter: bootstrap a Sylius stack in minutes, launch your store in days with an expert. Open source, public repository, technical docs and a network of Sylius agencies."
+    "title": "Sylius Starter · an open source Sylius store, ready in one command",
+    "description": "Sylius Starter sets up a complete Sylius project in one command. Open source code, host it anywhere, no commission on sales, and partner agencies to deliver your store."
   },
   "lang": {
     "label": "Language",
@@ -13,271 +13,169 @@
     "manual": "Choose a language:"
   },
   "nav": {
-    "posseder": "Rent or own",
-    "experts": "Experts",
-    "stories": "Success stories",
-    "starter": "Sylius Starter",
-    "tutoriels": "Tutorials",
+    "posseder": "SaaS vs Sylius",
+    "paths": "Your project",
+    "starter": "For developers",
+    "ecosystem": "Ecosystem",
     "github": "GitHub ↗",
     "cta": "Get support"
   },
   "hero": {
-    "hook": "Cut the cost of your e-commerce.",
-    "titleEm": "Your store,",
-    "titleRest": "live in a matter of days.",
-    "leadHtml": "Sylius is ready in minutes, your full store in days. Full control over your data, <strong>zero commission on sales</strong> and an entire ecosystem to support you.",
-    "cta": "Get expert support →",
-    "feats": [
-      {
-        "icon": "code",
-        "title": "MIT license",
-        "sub": "The code is yours"
-      },
-      {
-        "icon": "server",
-        "title": "Hosting",
-        "sub": "of your choice"
-      },
-      {
-        "icon": "check",
-        "title": "Zero commission",
-        "sub": "on your sales, for life"
-      }
-    ],
-    "visual": {
-      "statValue": "0%",
-      "statLabel": "commission on your sales",
-      "codeTitle": "The code is yours",
-      "codeSub": "MIT license, hosting of your choice",
-      "alt": "Example Sylius store: product page"
-    }
-  },
-  "logos": {
-    "label": "Backed by the Sylius ecosystem 🇫🇷",
-    "items": [
-      {
-        "name": "Cushman & Wakefield",
-        "src": ""
-      },
-      {
-        "name": "Orpi",
-        "src": ""
-      },
-      {
-        "name": "dotJS",
-        "src": ""
-      },
-      {
-        "name": "Deezer",
-        "src": ""
-      }
-    ]
+    "title": "Your Sylius store, live in a few days.",
+    "leadHtml": "Sylius Starter sets up a complete Sylius project in one command. A partner agency builds on it to deliver your store at a fixed price. The code is open source, you host it wherever you like and <strong>no commission is taken on your sales</strong>.",
+    "cta": "Find an agency",
+    "ctaRepo": "See the code on GitHub ↗",
+    "alt": "Example Sylius store: product page"
   },
   "own": {
-    "eyebrow": "Rent or own",
-    "title": "An online store that truly belongs to you.",
-    "intro": "Many platforms host your store and charge a commission on every sale. With Sylius and its open source model, your code, theme and data are yours — all of it.",
-    "rentTag": "SaaS store",
-    "rentTitle": "You rent",
+    "title": "Differences between SaaS and Sylius",
+    "intro": "On a SaaS platform you pay a subscription, often a commission on sales, and your data stays with the vendor. With Sylius, the code, the theme and the data live with you.",
+    "rentTitle": "SaaS platform",
     "rentItems": [
-      "A subscription that grows with your revenue",
-      "Fees at every layer",
-      "Data that cannot be exported off the platform",
-      "Paid plugins every month",
-      "Locked in and dependent on the platform's roadmap"
+      "The subscription goes up with your revenue",
+      "Transaction fees and monthly paid apps",
+      "Data export limited to what the platform allows",
+      "The product roadmap is the vendor's call"
     ],
-    "ownTag": "Open source Sylius",
-    "ownTitle": "You own",
+    "ownTitle": "Sylius Starter",
     "ownItems": [
-      "A <b>fixed price</b> and committed timeline, agreed upfront",
-      "A budget that does not grow as your business scales",
-      "<b>0% commission</b>: you only pay your payment provider",
-      "Storefront, code and data: yours, exportable anytime",
-      "Swap any building block — including your agency"
+      "A <b>fixed price</b> and timeline agreed before work starts",
+      "The code, the theme and the database are yours",
+      "Switch agency, host or module whenever you want",
+      "Features built specifically for your core business"
     ],
-    "ctaLeadHtml": "It's not too late to take back control!<br><strong>Recover your data and full ownership of your store.</strong>",
-    "cta": "Migrate my store now →"
+    "migrate": "Already running a store? We'll help you migrate"
   },
-  "sylius": {
-    "eyebrow": "Built on Sylius",
-    "title": "Sylius Starter is built on Sylius.",
-    "introBefore": "Sylius is an open source e-commerce platform built on Symfony. Thousands of developers, full customization and real sovereignty over your hosting. Sylius Starter builds on that foundation to save you time.",
-    "introLink": "Learn more on the official Sylius website",
-    "shift": "What Sylius Starter delivers in practice.",
-    "cards": [
+  "sovereignty": {
+    "title": "Your data, hosted with full sovereignty",
+    "intro": "With Sylius Starter, you choose where your store and your customers' data live. Not a platform vendor.",
+    "options": [
       {
-        "n": "For business",
-        "title": "Days, not months",
-        "p": "Your Sylius partner launches your store in days, not more. With a clear scope and controlled budget."
+        "tag": "You have your own infrastructure",
+        "title": "Host the store yourself",
+        "p": "In-house servers or an existing cloud: the store and its data sit alongside the rest of your information system, in the same place."
       },
       {
-        "n": "For ownership",
-        "title": "MIT, your code",
-        "p": "MIT license, your code. No Starter lock-in: you keep Sylius, Symfony and everything else."
-      },
-      {
-        "n": "Sovereign",
-        "title": "Deploy anywhere",
-        "p": "On the server of your choice: you stay in control of your infrastructure."
-      },
-      {
-        "n": "Community",
-        "title": "Open source and alive",
-        "p": "A specific need? Thousands of developers — someone will be able to help."
-      },
-      {
-        "n": "Freedom",
-        "title": "No dependency",
-        "p": "It's your code; you can change provider whenever you want."
+        "tag": "You work with an agency",
+        "title": "Your agency advises you",
+        "p": "The agency building your store recommends the hosting that fits your traffic, your budget and your constraints."
       }
+    ],
+    "promiseTitle": "Either way",
+    "promiseItems": [
+      "Your data stays yours, with no dependency on a vendor",
+      "You can move it to another host without any hassle",
+      "You host in Europe and comply with GDPR and European regulations"
     ]
-  },
-  "experts": {
-    "eyebrow": "The experts",
-    "title": "Surrounded by the best.",
-    "intro": "Around Sylius Starter, a whole ecosystem of experts: agencies and independent developers. If you prefer to delegate, you rely on their skills to build or migrate your store. And because everything runs on an open, standard foundation, you are never tied to one team — the whole ecosystem can take over.",
-    "benefits": [
-      {
-        "title": "The right skills",
-        "p": "A full ecosystem of Sylius specialists, rather than a single vendor and its limits."
-      },
-      {
-        "title": "Shared standards",
-        "p": "Everyone works on the same proven stack, with Symfony standards the market already knows."
-      },
-      {
-        "title": "Never locked in",
-        "p": "Your store belongs only to you. On an open, standard base, anyone can take over. An AI agent can help too."
-      }
-    ]
-  },
-  "stories": {
-    "eyebrow": "Success stories",
-    "title": "They launched with Sylius Starter.",
-    "visual": "Screenshot · coming soon",
-    "badge": "Coming soon",
-    "cardTitle": "Success story coming soon",
-    "cardP": "The first customer story will be published here: context, technical choices, timeline and results.",
-    "cta": "Start my project →"
   },
   "paths": {
-    "eyebrow": "Two paths",
-    "title": "Depending on your profile, two ways to take action.",
-    "intro": "Sylius Starter adapts to your context: delegate to a specialist or run it yourself — including with an AI agent.",
-    "specialistWho": "I'm a merchant",
-    "specialistOr": "or",
-    "specialistWho2": "project manager",
-    "specialistTitle": "Work with a specialist",
+    "title": "For your online store, two ways to get started",
+    "specialistWho": "You're an e-commerce business or project manager",
+    "specialistTitle": "Hand the project to an agency",
     "specialistItems": [
-      "Contact a Sylius agency: fast, cost-effective, scoped delivery.",
-      "Custom store in ~10 business days, fixed price agreed upfront.",
-      "Migration, support and training available for your project."
+      "A Sylius agency scopes the project with you and commits to a price.",
+      "A custom store is delivered in a few days.",
+      "Migration, maintenance and training are available depending on the project."
     ],
-    "specialistCta": "Get expert support →",
-    "devWho": "I'm a developer",
-    "devOr": "or",
-    "devWho2": "PM assisted by AI",
-    "devTitle": "In a few commands",
+    "specialistCta": "See the offers",
+    "devWho": "You're a developer, with or without AI assistance",
+    "devTitle": "Run the project yourself",
     "devItems": [
-      "Clone the repo, run <b>castor sylius:init</b>: everything is ready.",
-      "Sylius Starter helps you and your AI agent. Technical documentation available.",
-      "Catalog import, plugins, deployment: all scripted and reproducible."
+      "Clone the repository and run <code>castor sylius:init</code>.",
+      "Catalog import, plugins and deployment are already built in.",
+      "The documentation is written for humans and AI agents alike."
     ],
     "devCtaRepo": "Clone the repository ↗",
-    "devCtaTutorials": "View tutorials"
+    "devCtaDoc": "Read the docs ↗"
   },
   "found": {
-    "eyebrow": "Sylius Starter · Open source",
-    "title": "Sylius Starter, the experience developers were waiting for.",
-    "leadHtml": "<b>Sylius Starter</b> boots a store in a single command. The last barriers fall away: launching your e-commerce takes only <b>a few minutes</b>. Add features when you need them, remove what you don't, adapt the back office without writing a line of code.",
+    "title": "What Sylius Starter does",
+    "leadHtml": "Sylius Starter is a set of Castor commands (<a href=\"https://castor.jolicode.com\" target=\"_blank\" rel=\"noopener\">wait, what is Castor?</a>) around a standard Sylius project. You bootstrap a project, then add or remove features as your needs evolve.",
     "feats": [
       {
-        "html": "<b>A project ready in one command.</b> Docker, Sylius, database, assets, fixtures, tests: <code>sylius:init</code>."
+        "html": "<code>sylius:init</code> creates the project: Docker, Sylius, database, assets, fixtures and tests."
       },
       {
-        "html": "<b>Whole features, one command.</b> <code>sylius:add</code> installs, configures and migrates; <code>sylius:remove</code> cleans entities, migrations and dead code."
+        "html": "<code>sylius:add</code> installs, configures and migrates a feature. <code>sylius:remove</code> takes it out again, entities and migrations included."
       },
       {
-        "html": "<b>A back office in your hands.</b> Hide or reorder menu entries without writing code."
+        "html": "<code>sylius:menu:remove</code> hides the back-office entries you don't need."
       },
       {
-        "html": "<b>An environment that grows with the project.</b> Redis, Mailpit, RabbitMQ added to your project in a single command."
+        "html": "<code>sylius:docker:add</code> adds Redis, Mailpit or RabbitMQ to the environment."
       }
     ],
     "ctaGithub": "View on GitHub ↗",
-    "ctaDoc": "Technical documentation ↗",
-    "termPath": "~/my-store · castor",
+    "ctaDoc": "Documentation ↗",
+    "termPath": "~/my-store",
     "termLines": [
       { "type": "cmd", "text": "castor sylius:init" },
-      { "type": "ok", "text": "✅ Docker · Sylius · migrated DB · assets · fixtures · Behat" },
-      { "type": "dim", "text": "→ project ready for development" },
+      { "type": "dim", "text": "docker · sylius · migrated db · assets · fixtures · tests" },
+      { "type": "ok", "text": "project ready" },
       { "type": "cmd", "text": "castor sylius:add cms payments" },
       { "type": "dim", "text": "install · configure · migrate · build" },
-      { "type": "ok", "text": "✅ 3 features enabled" },
+      { "type": "ok", "text": "2 features enabled" },
       { "type": "cmd", "text": "castor sylius:remove invoicing" },
-      { "type": "dim", "text": "clean up entities · roll back migrations" },
-      { "type": "ok", "text": "✅ feature removed cleanly" },
-      { "type": "cmd", "text": "castor sylius:menu:remove marketing" },
-      { "type": "ok2", "text": "✅ back office adapted, without a line of Symfony" },
-      { "type": "cmd", "text": "castor sylius:docker:add redis mailpit rabbitmq" },
-      { "type": "ok2", "text": "✅ 3 services added to the environment" }
+      { "type": "dim", "text": "drop entities · roll back migrations" },
+      { "type": "ok", "text": "feature removed" },
+      { "type": "cmd", "text": "castor sylius:docker:add redis mailpit" },
+      { "type": "ok", "text": "2 services added" }
     ]
   },
-  "tutoriels": {
-    "eyebrow": "Tutorials",
-    "title": "Tutorials from A to Z",
-    "cards": [
+  "ecosystem": {
+    "title": "Built on Sylius and Symfony",
+    "intro": "Sylius is an open source e-commerce platform built on Symfony. Sylius Starter adds no proprietary layer: your project stays a standard Sylius project that any Symfony team can pick up.",
+    "link": "Discover Sylius ↗",
+    "benefits": [
       {
-        "badge": "Coming soon",
-        "title": "Launch a project from A to Z: I'm a developer",
-        "p": "Topics covered: init, theme, payments, go-live. Every step documented."
+        "title": "Agencies and freelancers",
+        "p": "Several agencies and independent developers already work with Sylius. No need to build it yourself: you choose who to work with."
       },
       {
-        "badge": "Coming soon",
-        "title": "Launch a project from A to Z: product manager with AI",
-        "p": "Topics covered: configuration, Castor commands, guided iterations."
+        "title": "No dependency on one vendor",
+        "p": "The code follows Symfony conventions. Another team can take over without rewriting everything."
+      },
+      {
+        "title": "Hosted where you want",
+        "p": "A dedicated server, a European cloud or your own infrastructure: Sylius Starter doesn't impose anything."
       }
-    ],
-    "cta": "Read the technical docs ↗"
+    ]
   },
   "event": {
-    "eyebrow": "Event · November 2026",
-    "title": "Sylius Starter at PS Summit 2026",
-    "p": "The first open source PrestaShop & Sylius gathering: workshops, technical talks, success stories and community. Sylius Starter will be there — come meet the team and ecosystem experts.",
-    "cta": "Learn more about PS Summit ↗"
+    "date": "November 2026",
+    "title": "Meet us at PS Summit",
+    "p": "The first open source event shared by PrestaShop and Sylius: workshops, technical talks and case studies. Come and talk to us about your project.",
+    "cta": "PS Summit programme ↗"
   },
   "offer": {
-    "eyebrow": "Get support",
-    "title": "Get support.",
+    "title": "Working with a partner agency",
+    "intro": "Services are delivered by independent Sylius agencies. You deal with them directly.",
     "plans": [
       {
         "name": "Custom store",
         "price": "Fixed price",
-        "desc": "Custom does not mean complicated. A partner expert assembles your store from proven building blocks: your theme, checkout, payment methods, shipping, search. Clear scope, fixed price, and you are selling within about ten days.",
-        "cta": "Talk to an expert",
+        "desc": "The agency assembles your store from the Starter's modules: theme, checkout, payment, shipping, search. Scope and price are set upfront, and the store is live in a few days.",
+        "cta": "Talk to an agency",
         "ctaStyle": "primary"
       },
       {
-        "name": "Platform migration",
+        "name": "Migration",
         "price": "On quote",
-        "desc": "A partner expert runs your migration: audit, replatforming, data transfer and cutover to an open stack you own. Scoped and priced for your project.",
+        "desc": "Audit of your current setup, data transfer and cutover from your existing platform. Pricing depends on volume and integrations.",
         "cta": "Describe my project",
         "ctaStyle": "ghost"
       },
       {
-        "name": "Support & training",
+        "name": "Maintenance and training",
         "price": "Package or subscription",
-        "desc": "Your partner expert provides maintenance coverage and trains your team: take over the store and evolve it autonomously.",
+        "desc": "Corrective and evolutive maintenance, plus training so your team gets the most out of your store.",
         "cta": "Learn more",
         "ctaStyle": "ghost"
       }
     ]
   },
   "footer": {
-    "about": "Open source e-commerce that truly belongs to you. Built on Sylius.",
-    "product": "Product",
-    "resources": "Resources",
-    "legal1": "Open source stack, independent experts · Symfony · Sylius · Castor · Docker",
-    "legal2": "An open project from the Sylius ecosystem · © 2026 Sylius Starter"
+    "product": "The project",
+    "resources": "Resources"
   }
 }
