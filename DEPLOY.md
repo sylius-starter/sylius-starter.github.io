@@ -2,61 +2,51 @@
 
 Static multi-lang landing page, built with [Astro](https://astro.build).
 
-Live (GitHub Pages project site): [https://jolicode.github.io/sylius-starter/](https://jolicode.github.io/sylius-starter/)
+Live (GitHub Pages organization site): [https://sylius-starter.github.io/](https://sylius-starter.github.io/)
 
 ## Prerequisites
 
-- Node.js 20+
+- Node.js 22.12+ (required by Astro)
 
 ## Commands
 
 ```bash
 npm install     # install dependencies
 npm run dev     # http://localhost:4321/
-npm run build   # output to dist/ (base path `/`)
+npm run build   # output to dist/
 npm run preview # http://localhost:4321/ after build
 ```
 
-Local builds use `ASTRO_BASE=/` by default in `astro.config.mjs`.
-
-To mimic the GitHub Pages project site locally:
-
-```bash
-SITE_URL=https://jolicode.github.io ASTRO_BASE=/sylius-starter/ npm run build
-npm run preview
-# open http://localhost:4321/sylius-starter/
-```
+`astro.config.mjs` defaults to `SITE_URL=https://sylius-starter.github.io` and `ASTRO_BASE=/`, so local and CI builds need no extra variables.
 
 ## Editing content
 
 | What | Where |
 |------|--------|
-| Language | `src/i18n/<code>.json` |
+| Copy (per language) | `src/i18n/<code>.json` |
 | Layout / sections | `src/components/Landing.astro` |
 | Styles | `src/styles/global.css` |
+| Fonts, `<head>` | `src/layouts/Layout.astro` |
 | Language switcher | `src/components/LangSwitcher.astro` + `src/i18n/locales.ts` |
 
 To add a language: create `src/i18n/<code>.json`, register it in `src/i18n/locales.ts`, and add `src/pages/<code>/index.astro`.
 
+The root `/` page redirects to the visitor's browser language (English by default).
+
 ## GitHub Pages
 
-The workflow [`.github/workflows/website-pages.yml`](../.github/workflows/website-pages.yml) builds and deploys `dist/` on push to `main` when files under `website/` change.
+The workflow [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) builds the site with `withastro/action` and deploys `dist/` with `actions/deploy-pages` on every push to `main` (or manually via *Run workflow*).
 
-CI sets:
+In the repository settings, **Settings → Pages → Build and deployment → Source** must be set to **GitHub Actions**. With "Deploy from a branch", GitHub also runs its default Jekyll build on the raw sources, which fails on the `.astro` files.
 
-- `SITE_URL=https://jolicode.github.io`
-- `ASTRO_BASE=/sylius-starter/`
-
-`public/CNAME` is removed before the CI build so GitHub Pages serves the project URL until a custom domain is configured.
+`public/CNAME` contains `sylius-starter.github.io`.
 
 ### Custom domain (later)
 
-When moving to `sylius-starter.jolicode.com` at the site root:
+To serve the site from a custom domain at the root:
 
-1. Add `public/CNAME` with the domain name
-2. Update the workflow build env to `SITE_URL=https://sylius-starter.jolicode.com` and `ASTRO_BASE=/`
-3. Configure DNS and GitHub Pages custom domain settings
+1. Replace the content of `public/CNAME` with the domain name
+2. Change the `site` default in `astro.config.mjs` (or set `SITE_URL` in the workflow) to the new URL, so canonical and `hreflang` links are correct
+3. Configure DNS and the custom domain in GitHub Pages settings
 
-```bash
-SITE_URL=https://sylius-starter.jolicode.com ASTRO_BASE=/ npm run build
-```
+Only set `ASTRO_BASE` if the site is ever served from a sub-path.
