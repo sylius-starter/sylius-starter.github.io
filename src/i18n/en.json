@@ -12,6 +12,10 @@
     "title": "Redirecting…",
     "manual": "Choose a language:"
   },
+  "announce": {
+    "tag": "New",
+    "textHtml": "Friends of Sylius is reviving the momentum around Sylius.<br>Contributors, agencies and partners, you are all invited to take part."
+  },
   "nav": {
     "posseder": "SaaS vs Sylius",
     "paths": "Your project",

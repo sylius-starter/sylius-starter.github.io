@@ -109,6 +109,13 @@ nav {
 .nav-links a.nav-github { font-size: .85rem; padding: .55rem 1rem; color: var(--ink-soft); }
 @media (max-width: 1020px) { .nav-links a:not(.nav-cta):not(.nav-github) { display: none; } }
 
+/* ---- Announcement banner (temporary) ---- */
+.announce { background: var(--violet); color: var(--white); font-size: .9rem; line-height: 1.45; }
+.announce-in { display: flex; align-items: center; justify-content: center; gap: .9rem; padding-block: .7rem; }
+.announce p { margin: 0; }
+.announce-tag { font-size: .66rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+    background: rgb(255 255 255 / .2); padding: .22rem .65rem; border-radius: 100px; white-space: nowrap; flex-shrink: 0; }
+
 /* ---- Hero ---- */
 .hero { padding-top: clamp(2.5rem, 3vw, 2.8rem); padding-bottom: clamp(2.5rem, 3vw, 2.8rem); }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: stretch; }

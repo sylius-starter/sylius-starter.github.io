@@ -14,6 +14,13 @@ const repo = 'https://github.com/sylius-starter/sylius-starter';
 const docs = `${repo}#readme`;
 ---
 
+<div class="announce" role="note">
+  <div class="wrap announce-in">
+    <span class="announce-tag">{t.announce.tag}</span>
+    <p set:html={t.announce.textHtml} />
+  </div>
+</div>
+
 <nav>
   <div class="wrap nav-in">
     <a href="#top" class="brand">Sylius Starter<span class="dot"></span></a>
