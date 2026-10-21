@@ -97,16 +97,16 @@
     "leadHtml": "Sylius Starter is a set of Castor commands (<a href=\"https://castor.jolicode.com\" target=\"_blank\" rel=\"noopener\">wait, what is Castor?</a>) around a standard Sylius project. You bootstrap a project, then add or remove features as your needs evolve.",
     "feats": [
       {
-        "html": "<code>sylius:init</code> creates the project: Docker, Sylius, database, assets, fixtures and tests."
+        "html": "<code>sylius:add</code> installs, configures and migrates a plugin. <code>sylius:remove</code> takes it out again, configuration and migrations included."
       },
       {
-        "html": "<code>sylius:add</code> installs, configures and migrates a feature. <code>sylius:remove</code> takes it out again, entities and migrations included."
+        "html": "<code>sylius:theme:setup</code> switches the whole storefront theme, removing the previous one first."
+      },
+      {
+        "html": "<code>sylius:b2b:enable</code> turns on B2B features, such as hiding prices."
       },
       {
         "html": "<code>sylius:menu:remove</code> hides the back-office entries you don't need."
-      },
-      {
-        "html": "<code>sylius:docker:add</code> adds Redis, Mailpit or RabbitMQ to the environment."
       }
     ],
     "ctaGithub": "View on GitHub ↗",
