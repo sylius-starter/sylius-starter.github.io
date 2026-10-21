@@ -97,6 +97,9 @@
     "leadHtml": "Sylius Starter est un ensemble de commandes Castor (<a href=\"https://castor.jolicode.com\" target=\"_blank\" rel=\"noopener\">mais qu'est-ce que Castor au fait ?</a>) autour d'un projet Sylius standard. Vous bootstrapez un projet, puis vous ajoutez ou retirez des fonctionnalités au fur et à mesure des besoins.",
     "feats": [
       {
+        "html": "<code>sylius:init</code> crée le projet : Docker, Sylius, base de données, assets, fixtures et tests."
+      },
+      {
         "html": "<code>sylius:add</code> installe, configure et migre un plugin. <code>sylius:remove</code> le retire, configuration et migrations comprises."
       },
       {
