@@ -113,17 +113,18 @@
     "ctaDoc": "Documentation ↗",
     "termPath": "~/ma-boutique",
     "termLines": [
-      { "type": "cmd", "text": "castor sylius:init" },
-      { "type": "dim", "text": "docker · sylius · base migrée · assets · fixtures · tests" },
-      { "type": "ok", "text": "projet prêt" },
-      { "type": "cmd", "text": "castor sylius:add cms payments" },
+      { "type": "cmd", "text": "castor sylius:add cms invoicing" },
       { "type": "dim", "text": "installe · configure · migre · build" },
       { "type": "ok", "text": "2 fonctionnalités activées" },
-      { "type": "cmd", "text": "castor sylius:remove invoicing" },
-      { "type": "dim", "text": "supprime les entités · annule les migrations" },
+      { "type": "cmd", "text": "castor sylius:remove cms" },
+      { "type": "dim", "text": "et l’annule, proprement" },
       { "type": "ok", "text": "fonctionnalité retirée" },
-      { "type": "cmd", "text": "castor sylius:docker:add redis mailpit" },
-      { "type": "ok", "text": "2 services ajoutés" }
+      { "type": "cmd", "text": "castor sylius:theme:setup canvas" },
+      { "type": "dim", "text": "change tout le thème de la boutique" },
+      { "type": "ok", "text": "thème activé" },
+      { "type": "cmd", "text": "castor sylius:b2b:enable hide_prices" },
+      { "type": "dim", "text": "active une fonctionnalité B2B" },
+      { "type": "ok", "text": "fonctionnalité B2B activée" }
     ]
   },
   "ecosystem": {

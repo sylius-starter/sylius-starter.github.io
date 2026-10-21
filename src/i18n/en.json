@@ -113,17 +113,18 @@
     "ctaDoc": "Documentation ↗",
     "termPath": "~/my-store",
     "termLines": [
-      { "type": "cmd", "text": "castor sylius:init" },
-      { "type": "dim", "text": "docker · sylius · migrated db · assets · fixtures · tests" },
-      { "type": "ok", "text": "project ready" },
-      { "type": "cmd", "text": "castor sylius:add cms payments" },
+      { "type": "cmd", "text": "castor sylius:add cms invoicing" },
       { "type": "dim", "text": "install · configure · migrate · build" },
       { "type": "ok", "text": "2 features enabled" },
-      { "type": "cmd", "text": "castor sylius:remove invoicing" },
-      { "type": "dim", "text": "drop entities · roll back migrations" },
+      { "type": "cmd", "text": "castor sylius:remove cms" },
+      { "type": "dim", "text": "and undo it, cleanly" },
       { "type": "ok", "text": "feature removed" },
-      { "type": "cmd", "text": "castor sylius:docker:add redis mailpit" },
-      { "type": "ok", "text": "2 services added" }
+      { "type": "cmd", "text": "castor sylius:theme:setup canvas" },
+      { "type": "dim", "text": "switch the whole storefront theme" },
+      { "type": "ok", "text": "theme enabled" },
+      { "type": "cmd", "text": "castor sylius:b2b:enable hide_prices" },
+      { "type": "dim", "text": "turn on a B2B feature" },
+      { "type": "ok", "text": "B2B feature enabled" }
     ]
   },
   "ecosystem": {
