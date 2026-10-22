@@ -14,8 +14,7 @@
   },
   "announce": {
     "tag": "New",
-    "textHtml": "Partners, solution vendors, freelancers, contributors: Sylius Starter is built together.",
-    "cta": "Get involved →"
+    "textHtml": "Partners, solution vendors, freelancers, contributors: Sylius Starter is built together."
   },
   "nav": {
     "why": "Why Sylius Starter",
@@ -150,8 +149,7 @@
       }
     ],
     "cta": "See all solutions",
-    "joinText": "Do you build a solution? Join Sylius Starter.",
-    "joinCta": "Get involved →"
+    "joinText": "Do you build a solution? Join Sylius Starter."
   },
   "offer": {
     "title": "Working with a partner",

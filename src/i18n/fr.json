@@ -14,8 +14,7 @@
   },
   "announce": {
     "tag": "Nouveau",
-    "textHtml": "Partenaires, éditeurs de solutions, indépendants, contributeurs : Sylius Starter se construit à plusieurs.",
-    "cta": "Participer →"
+    "textHtml": "Partenaires, éditeurs de solutions, indépendants, contributeurs : Sylius Starter se construit à plusieurs."
   },
   "nav": {
     "why": "Pourquoi Sylius Starter",
@@ -150,8 +149,7 @@
       }
     ],
     "cta": "Voir toutes les solutions",
-    "joinText": "Vous éditez une solution ? Rejoignez Sylius Starter.",
-    "joinCta": "Participer →"
+    "joinText": "Vous éditez une solution ? Rejoignez Sylius Starter."
   },
   "offer": {
     "title": "Travailler avec un partenaire",

@@ -12,21 +12,22 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const asset = (path: string) => `${base}/${path.replace(/^\//, '')}`;
 const repo = 'https://github.com/sylius-starter/sylius-starter';
 const docs = 'https://sylius-starter.github.io/docs/';
-// Friends of Sylius: drives the banner, the hero and partners "Trouver un partenaire" buttons
-// and the Solutions "Participer" link. Set to '' to hide them all at once.
-const friendsOfSylius = 'https://github.com/FriendsOfSylius';
 // "Voir toutes les solutions" destination: hidden while empty.
 const allSolutions = '';
+const partnerLogos = [
+  { name: 'Emagma', src: 'images/logo/emagma.svg', url: 'https://www.emagma.fr' },
+  { name: 'JoliCode', src: 'images/logo/jolicode.svg', url: 'https://jolicode.com' },
+  { name: 'Monsieur Biz', src: 'images/logo/monsieurbiz.svg', url: 'https://monsieurbiz.com' },
+  { name: 'redirection.io', src: 'images/logo/redirectionio.svg', url: 'https://redirection.io' },
+];
 ---
 
-{friendsOfSylius && (
-  <div class="announce" role="note">
-    <div class="wrap announce-in">
-      <span class="announce-tag">{t.announce.tag}</span>
-      <p><Fragment set:html={t.announce.textHtml} /> <a href={friendsOfSylius} target="_blank" rel="noopener" class="announce-link">{t.announce.cta}</a></p>
-    </div>
+<div class="announce" role="note">
+  <div class="wrap announce-in">
+    <span class="announce-tag">{t.announce.tag}</span>
+    <p set:html={t.announce.textHtml} />
   </div>
-)}
+</div>
 
 <nav>
   <div class="wrap nav-in">
@@ -79,8 +80,8 @@ const allSolutions = '';
       <h1>{t.hero.title}</h1>
       <p class="lead" set:html={t.hero.leadHtml} />
       <div class="hero-cta">
-        {friendsOfSylius && <a href={friendsOfSylius} target="_blank" rel="noopener" class="btn btn-primary">{t.hero.cta}</a>}
-        <a href="#solutions" class:list={['btn', friendsOfSylius ? 'btn-ghost' : 'btn-primary']}>{t.hero.ctaSolutions}</a>
+        <a href="#partenaires" class="btn btn-primary">{t.hero.cta}</a>
+        <a href="#solutions" class="btn btn-ghost">{t.hero.ctaSolutions}</a>
       </div>
     </div>
 
@@ -217,11 +218,7 @@ const allSolutions = '';
       </div>
     )}
 
-    {friendsOfSylius && (
-      <p class="sol-join">
-        {t.solutions.joinText} <a href={friendsOfSylius} target="_blank" rel="noopener">{t.solutions.joinCta}</a>
-      </p>
-    )}
+    <p class="sol-join">{t.solutions.joinText}</p>
   </div>
 </section>
 
@@ -245,11 +242,17 @@ const allSolutions = '';
     </div>
 
     <p class="offer-note">{t.offer.note}</p>
-    {friendsOfSylius && (
-      <div class="offer-cta">
-        <a href={friendsOfSylius} target="_blank" rel="noopener" class="btn btn-primary">{t.offer.cta}</a>
-      </div>
-    )}
+    <div class="partner-logos">
+      {partnerLogos.map((logo) => (
+        <a href={logo.url} target="_blank" rel="noopener" title={logo.name}>
+          <img src={asset(logo.src)} alt={logo.name} loading="lazy" />
+        </a>
+      ))}
+    </div>
+
+    <div class="offer-cta">
+      <a href="#soon" class="btn btn-primary">{t.offer.cta}</a>
+    </div>
   </div>
 </section>
 

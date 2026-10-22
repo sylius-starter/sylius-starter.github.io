@@ -131,8 +131,6 @@ nav {
 .announce { background: var(--violet); color: var(--white); font-size: .9rem; line-height: 1.45; }
 .announce-in { display: flex; align-items: center; justify-content: center; gap: .9rem; padding-block: .7rem; }
 .announce p { margin: 0; }
-.announce-link { color: var(--white); font-weight: 600; text-underline-offset: 3px; white-space: nowrap; }
-.announce-link:hover { text-decoration-thickness: 2px; }
 .announce-tag { font-size: .66rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
     background: rgb(255 255 255 / .2); padding: .22rem .65rem; border-radius: 100px; white-space: nowrap; flex-shrink: 0; }
 
@@ -255,7 +253,6 @@ nav {
 .sol-sec .section-head { margin-bottom: clamp(2rem, 4vw, 2.8rem); }
 .sol-cta { margin-top: 1.8rem; }
 .sol-join { margin: 1.8rem 0 0; color: var(--ink-soft); font-size: .96rem; }
-.sol-join a { color: var(--teal); font-weight: 600; text-underline-offset: 3px; white-space: nowrap; }
 
 /* ---- Supporters logos (shown once logos are listed in i18n) ---- */
 .logos-sec { padding-block: clamp(1.8rem, 3.5vw, 2.4rem); border-top: 1px solid var(--line-soft); }
@@ -288,6 +285,7 @@ nav {
 .benefit p { color: var(--ink-soft); font-size: .95rem; margin: 0; max-width: 50ch; line-height: 1.55; }
 
 /* ---- Offer ---- */
+.offer { padding-bottom: clamp(2.5rem, 5vw, 3.5rem); }
 .offer .section-head { margin-bottom: clamp(2rem, 4vw, 3rem); }
 .plans { border-top: 2px solid var(--cyan-ink); }
 .plan { display: grid; grid-template-columns: minmax(210px, 1fr) 1.8fr; gap: 1.5rem 2.5rem; align-items: center;
@@ -299,7 +297,11 @@ nav {
 .plan .desc { color: var(--ink-soft); font-size: .96rem; line-height: 1.55; margin: 0; }
 .plan:hover .name h3 { color: var(--teal); }
 .offer-note { margin: 1.8rem 0 0; color: var(--ink-soft); font-size: .96rem; }
-.offer-cta { margin-top: 1.6rem; }
+.offer-cta { margin-top: clamp(3rem, 6vw, 4.5rem); }
+.partner-logos { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem clamp(2rem, 5vw, 3.5rem); margin-top: clamp(3rem, 6vw, 4.5rem); }
+.partner-logos a { display: block; }
+.partner-logos img { height: 30px; width: auto; max-width: 170px; object-fit: contain; filter: grayscale(1); opacity: .65; transition: filter .2s, opacity .2s; }
+.partner-logos a:hover img, .partner-logos a:focus-visible img { filter: none; opacity: 1; }
 
 /* ---- Footer ---- */
 footer { background: var(--paper); border-top: 1px solid var(--line); padding-block: clamp(2.5rem, 5vw, 3.5rem); }
