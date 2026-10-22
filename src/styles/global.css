@@ -297,7 +297,6 @@ nav {
 .plan .desc { color: var(--ink-soft); font-size: .96rem; line-height: 1.55; margin: 0; }
 .plan:hover .name h3 { color: var(--teal); }
 .offer-note { margin: 1.8rem 0 0; color: var(--ink-soft); font-size: .96rem; }
-.offer-cta { margin-top: clamp(3rem, 6vw, 4.5rem); }
 .partner-logos { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem clamp(2rem, 5vw, 3.5rem); margin-top: clamp(3rem, 6vw, 4.5rem); }
 .partner-logos a { display: block; }
 .partner-logos img { height: 30px; width: auto; max-width: 170px; object-fit: contain; filter: grayscale(1); opacity: .65; transition: filter .2s, opacity .2s; }
