@@ -10,7 +10,7 @@ interface Props {
 const { locale, t } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const asset = (path: string) => `${base}/${path.replace(/^\//, '')}`;
-const repo = 'https://github.com/sylius-starter/sylius-starter';
+const repo = 'https://github.com/sylius-starter/skeleton';
 const docs = 'https://sylius-starter.github.io/docs/';
 // "Voir toutes les solutions" destination: hidden while empty.
 const allSolutions = '';
