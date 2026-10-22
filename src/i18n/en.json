@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Sylius Starter · an open source Sylius store, ready in one command",
-    "description": "Sylius Starter sets up a complete Sylius project in one command. Open source code, host it anywhere, no commission on sales, and partner agencies to deliver your store."
+    "title": "Sylius Starter · Your sovereign e-commerce store, ready in a few days",
+    "description": "Sylius Starter is a command-line tool that creates your complete e-commerce store in a single command. Host it anywhere, with no commission on your sales."
   },
   "lang": {
     "label": "Language",
@@ -14,87 +14,72 @@
   },
   "announce": {
     "tag": "New",
-    "textHtml": "Friends of Sylius is reviving the momentum around Sylius.<br>Contributors, agencies and partners, you are all invited to take part."
+    "textHtml": "Partners, solution vendors, freelancers, contributors: Sylius Starter is built together.",
+    "cta": "Get involved →"
   },
   "nav": {
-    "posseder": "SaaS vs Sylius",
-    "paths": "Your project",
-    "starter": "For developers",
-    "ecosystem": "Ecosystem",
+    "why": "Why Sylius Starter",
+    "sovereignty": "Sovereignty",
+    "solutions": "Solutions",
+    "partners": "Partners",
+    "developers": "Developers",
     "github": "GitHub ↗",
-    "cta": "Get support"
+    "cta": "Find a partner",
+    "menu": "Menu"
   },
   "hero": {
-    "title": "Your Sylius store, live in a few days.",
-    "leadHtml": "Sylius Starter sets up a complete Sylius project in one command. A partner agency builds on it to deliver your store at a fixed price. The code is open source, you host it wherever you like and <strong>no commission is taken on your sales</strong>.",
-    "cta": "Find an agency",
-    "ctaRepo": "See the code on GitHub ↗",
+    "title": "Your sovereign e‑commerce store, ready in a few days.",
+    "leadHtml": "Sylius Starter is a command-line tool that creates your complete e‑commerce store, ready to be tailored by your team or a partner. Host it wherever you like, <strong>with no commission on your sales</strong>.",
+    "cta": "Find a partner",
+    "ctaSolutions": "See the solutions",
     "alt": "Example Sylius store: product page"
   },
   "own": {
-    "title": "Differences between SaaS and Sylius",
-    "intro": "On a SaaS platform you pay a subscription, often a commission on sales, and your data stays with the vendor. With Sylius, the code, the theme and the data live with you.",
-    "rentTitle": "SaaS platform",
+    "title": "Why move away from a subscription platform",
+    "intro": "On a subscription platform, you pay every month, often a commission on your sales, and your data stays with the vendor. With Sylius Starter, your store and your data stay with you.",
+    "rentTitle": "Subscription platform",
     "rentItems": [
       "The subscription goes up with your revenue",
-      "Transaction fees and monthly paid apps",
-      "Data export limited to what the platform allows",
-      "The product roadmap is the vendor's call"
+      "Transaction fees and paid apps every month",
+      "Exporting your data is limited to what the vendor allows",
+      "The roadmap is up to the vendor"
     ],
     "ownTitle": "Sylius Starter",
     "ownItems": [
-      "A <b>fixed price</b> and timeline agreed before work starts",
-      "The code, the theme and the database are yours",
-      "Switch agency, host or module whenever you want",
-      "Features built specifically for your core business"
+      "No platform subscription, no commission on sales",
+      "Your store and your data belong to you",
+      "Switch partner, host or solution whenever you want",
+      "Adjust the features to your business"
     ],
-    "migrate": "Already running a store? We'll help you migrate"
+    "migrate": "Already have a store? We'll help you migrate"
   },
   "sovereignty": {
-    "title": "Your data, hosted with full sovereignty",
-    "intro": "With Sylius Starter, you choose where your store and your customers' data live. Not a platform vendor.",
+    "title": "A sovereign store",
+    "intro": "You decide where your store and your customers' data live.",
     "options": [
       {
         "tag": "You have your own infrastructure",
-        "title": "Host the store yourself",
-        "p": "In-house servers or an existing cloud: the store and its data sit alongside the rest of your information system, in the same place."
+        "title": "In-house",
+        "p": "On your servers or your cloud, your store joins the rest of your information system."
       },
       {
-        "tag": "You work with an agency",
-        "title": "Your agency advises you",
-        "p": "The agency building your store recommends the hosting that fits your traffic, your budget and your constraints."
+        "tag": "You work with a partner",
+        "title": "Get expert advice",
+        "p": "Your partner recommends the hosting that fits your traffic, your budget and your constraints."
       }
     ],
-    "promiseTitle": "Either way",
+    "promiseTitle": "What you keep",
     "promiseItems": [
-      "Your data stays yours, with no dependency on a vendor",
-      "You can move it to another host without any hassle",
-      "You host in Europe and comply with GDPR and European regulations"
+      "Your data, with no dependency on a vendor",
+      "The freedom to change hosts",
+      "Hosting in Europe, GDPR compliant"
     ]
   },
-  "paths": {
-    "title": "For your online store, two ways to get started",
-    "specialistWho": "You're an e-commerce business or project manager",
-    "specialistTitle": "Hand the project to an agency",
-    "specialistItems": [
-      "A Sylius agency scopes the project with you and commits to a price.",
-      "A custom store is delivered in a few days.",
-      "Migration, maintenance and training are available depending on the project."
-    ],
-    "specialistCta": "See the offers",
-    "devWho": "You're a developer, with or without AI assistance",
-    "devTitle": "Run the project yourself",
-    "devItems": [
-      "Clone the repository and run <code>castor sylius:init</code>.",
-      "Catalog import, plugins and deployment are already built in.",
-      "The documentation is written for humans and AI agents alike."
-    ],
-    "devCtaRepo": "Clone the repository ↗",
-    "devCtaDoc": "Read the docs ↗"
-  },
   "found": {
-    "title": "What Sylius Starter does",
-    "leadHtml": "Sylius Starter is a set of Castor commands (<a href=\"https://castor.jolicode.com\" target=\"_blank\" rel=\"noopener\">wait, what is Castor?</a>) around a standard Sylius project. You bootstrap a project, then add or remove features as your needs evolve.",
+    "leadHtml": "Sylius Starter is a set of Castor commands (<a href=\"https://castor.jolicode.com\" target=\"_blank\" rel=\"noopener\">wait, what is Castor?</a>) around a standard Sylius project. You create a project, then add or remove features as your needs evolve. Your project stays standard: any Symfony team can pick it up.",
+    "dev": {
+      "title": "Are you a developer?"
+    },
     "feats": [
       {
         "html": "<code>sylius:init</code> creates the project: Docker, Sylius, database, assets, fixtures and tests."
@@ -103,7 +88,7 @@
         "html": "<code>sylius:add</code> installs, configures and migrates a plugin. <code>sylius:remove</code> takes it out again, configuration and migrations included."
       },
       {
-        "html": "<code>sylius:theme:setup</code> switches the whole storefront theme, removing the previous one first."
+        "html": "<code>sylius:theme:setup</code> switches the whole store theme, removing the previous one first."
       },
       {
         "html": "<code>sylius:b2b:enable</code> turns on B2B features, such as hiding prices."
@@ -120,34 +105,30 @@
       { "type": "dim", "text": "install · configure · migrate · build" },
       { "type": "ok", "text": "2 features enabled" },
       { "type": "cmd", "text": "castor sylius:remove cms" },
-      { "type": "dim", "text": "and undo it, cleanly" },
+      { "type": "dim", "text": "and undoes it, cleanly" },
       { "type": "ok", "text": "feature removed" },
       { "type": "cmd", "text": "castor sylius:theme:setup canvas" },
-      { "type": "dim", "text": "switch the whole storefront theme" },
+      { "type": "dim", "text": "switches the whole store theme" },
       { "type": "ok", "text": "theme enabled" },
       { "type": "cmd", "text": "castor sylius:b2b:enable hide_prices" },
-      { "type": "dim", "text": "turn on a B2B feature" },
+      { "type": "dim", "text": "turns on a B2B feature" },
       { "type": "ok", "text": "B2B feature enabled" }
     ]
   },
   "ecosystem": {
-    "title": "Built on Sylius and Symfony",
-    "intro": "Sylius is an open source e-commerce platform built on Symfony. Sylius Starter adds no proprietary layer: your project stays a standard Sylius project that any Symfony team can pick up.",
+    "title": "A proven foundation",
+    "intro": "Sylius has been running demanding stores for more than ten years. E‑commerce expertise and a track record of projects that few solutions can match.",
     "link": "Discover Sylius ↗",
     "benefits": [
       {
-        "title": "Agencies and freelancers",
-        "p": "Several agencies and independent developers already work with Sylius. No need to build it yourself: you choose who to work with."
-      },
-      {
-        "title": "No dependency on one vendor",
-        "p": "The code follows Symfony conventions. Another team can take over without rewriting everything."
-      },
-      {
-        "title": "Hosted where you want",
-        "p": "A dedicated server, a European cloud or your own infrastructure: Sylius Starter doesn't impose anything."
+        "title": "Community-driven",
+        "p": "Partners, solution vendors and freelancers keep the project alive."
       }
     ]
+  },
+  "supporters": {
+    "label": "They support Sylius Starter",
+    "logos": []
   },
   "event": {
     "date": "November 2026",
@@ -155,32 +136,41 @@
     "p": "The first open source event shared by PrestaShop and Sylius: workshops, technical talks and case studies. Come and talk to us about your project.",
     "cta": "PS Summit programme ↗"
   },
+  "solutions": {
+    "title": "The solutions your store needs, already plugged in",
+    "intro": "Payment, redirects, traffic analytics: our partners' solutions are added to your store in one command, already configured.",
+    "cards": [
+      {
+        "title": "redirection.io",
+        "p": "Keep your search rankings intact when you change stores, and manage your redirects without touching the code."
+      },
+      {
+        "title": "Payment",
+        "p": "Get paid with the payment method of your choice, with no extra platform commission."
+      }
+    ],
+    "cta": "See all solutions",
+    "joinText": "Do you build a solution? Join Sylius Starter.",
+    "joinCta": "Get involved →"
+  },
   "offer": {
-    "title": "Working with a partner agency",
-    "intro": "Services are delivered by independent Sylius agencies. You deal with them directly.",
+    "title": "Working with a partner",
+    "intro": "Services are delivered by independent Sylius partners. You deal with them directly.",
     "plans": [
       {
         "name": "Custom store",
-        "price": "Fixed price",
-        "desc": "The agency assembles your store from the Starter's modules: theme, checkout, payment, shipping, search. Scope and price are set upfront, and the store is live in a few days.",
-        "cta": "Talk to an agency",
-        "ctaStyle": "primary"
+        "price": "Scope and price set upfront",
+        "desc": "Your partner builds your store with Sylius Starter: checkout, payment, shipping, search, design in your colours. It's live in a few days."
       },
       {
+        "id": "migration",
         "name": "Migration",
         "price": "On quote",
-        "desc": "Audit of your current setup, data transfer and cutover from your existing platform. Pricing depends on volume and integrations.",
-        "cta": "Describe my project",
-        "ctaStyle": "ghost"
-      },
-      {
-        "name": "Maintenance and training",
-        "price": "Package or subscription",
-        "desc": "Corrective and evolutive maintenance, plus training so your team gets the most out of your store.",
-        "cta": "Learn more",
-        "ctaStyle": "ghost"
+        "desc": "Audit of your current store, transfer of your products, customers and orders, and a switchover without losing your search rankings. Pricing depends on volume and integrations."
       }
-    ]
+    ],
+    "note": "Maintenance and training are offered by partners depending on your project.",
+    "cta": "Find a partner"
   },
   "footer": {
     "product": "The project",

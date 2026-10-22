@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Sylius Starter · une boutique Sylius open source, prête en une commande",
-    "description": "Sylius Starter installe un projet Sylius complet en une commande. Code open source, hébergement libre, aucune commission sur les ventes, et des agences partenaires pour livrer votre boutique."
+    "title": "Sylius Starter · Votre boutique e-commerce souveraine, prête en quelques jours",
+    "description": "Sylius Starter est un outil en ligne de commande qui crée votre boutique e-commerce complète en une seule commande. Hébergement libre, sans commission sur vos ventes."
   },
   "lang": {
     "label": "Langue",
@@ -14,87 +14,72 @@
   },
   "announce": {
     "tag": "Nouveau",
-    "textHtml": "Friends of Sylius relance la dynamique autour de Sylius.<br>Contributeurs, agences et partenaires, vous êtes tous invités à y participer."
+    "textHtml": "Partenaires, éditeurs de solutions, indépendants, contributeurs : Sylius Starter se construit à plusieurs.",
+    "cta": "Participer →"
   },
   "nav": {
-    "posseder": "SaaS vs Sylius",
-    "paths": "Votre projet",
-    "starter": "Pour les développeurs",
-    "ecosystem": "Écosystème",
+    "why": "Pourquoi Sylius Starter",
+    "sovereignty": "Souveraineté",
+    "solutions": "Solutions",
+    "partners": "Partenaires",
+    "developers": "Développeurs",
     "github": "GitHub ↗",
-    "cta": "Accompagnement"
+    "cta": "Trouver un partenaire",
+    "menu": "Menu"
   },
   "hero": {
-    "title": "Votre boutique Sylius, en ligne en quelques jours.",
-    "leadHtml": "Sylius Starter installe un projet Sylius complet en une commande. Une agence partenaire s'appuie dessus pour livrer votre boutique à prix fixe. Le code est open source, vous l'hébergez où vous voulez et <strong>aucune commission n'est prélevée sur vos ventes</strong>.",
-    "cta": "Trouver une agence",
-    "ctaRepo": "Voir le code sur GitHub ↗",
+    "title": "Votre boutique e‑commerce souveraine, prête en quelques jours.",
+    "leadHtml": "Sylius Starter est un outil en ligne de commande qui crée votre boutique e‑commerce complète, prête à être adaptée par votre équipe ou un partenaire. Vous l'hébergez où vous voulez, <strong>sans commission sur vos ventes</strong>.",
+    "cta": "Trouver un partenaire",
+    "ctaSolutions": "Voir les solutions",
     "alt": "Exemple de boutique Sylius : page produit"
   },
   "own": {
-    "title": "Différences entre un SaaS et Sylius",
-    "intro": "Sur une plateforme SaaS, vous payez un abonnement, souvent une commission sur les ventes, et vos données restent chez l'éditeur. Avec Sylius, le code, le thème et les données sont chez vous.",
-    "rentTitle": "Plateforme SaaS",
+    "title": "Pourquoi sortir d'une solution par abonnement",
+    "intro": "Sur une solution par abonnement, vous payez chaque mois, souvent une commission sur vos ventes, et vos données restent chez l'éditeur. Avec Sylius Starter, votre boutique et vos données sont chez vous.",
+    "rentTitle": "Solution par abonnement",
     "rentItems": [
       "L'abonnement augmente avec votre chiffre d'affaires",
       "Des frais de transaction et des applications payantes au mois",
-      "Un export de données limité à ce que la plateforme autorise",
-      "Les évolutions du produit dépendent de l'éditeur"
+      "Un export de vos données limité à ce que l'éditeur autorise",
+      "Les évolutions dépendent de l'éditeur"
     ],
     "ownTitle": "Sylius Starter",
     "ownItems": [
-      "Un <b>prix fixe</b> et un délai convenus avant de commencer",
-      "Le code, le thème et la base de données vous appartiennent",
-      "Vous pouvez changer d'agence, d'hébergeur ou de module quand vous voulez",
-      "Des fonctionnalités conçues sur mesure pour votre cœur de métier"
+      "Pas d'abonnement à la plateforme, pas de commission sur les ventes",
+      "Votre boutique et vos données vous appartiennent",
+      "Vous changez de partenaire, d'hébergeur ou de solution quand vous voulez",
+      "Vous ajustez les fonctionnalités à votre activité"
     ],
     "migrate": "Vous avez déjà une boutique ? On vous aide à migrer"
   },
   "sovereignty": {
-    "title": "Vos données, hébergées en toute souveraineté",
-    "intro": "Avec Sylius Starter, c'est vous qui choisissez où vivent votre boutique et les données de vos clients. Pas l'éditeur d'une plateforme.",
+    "title": "Une boutique souveraine",
+    "intro": "Vous décidez où vivent votre boutique et les données de vos clients.",
     "options": [
       {
         "tag": "Vous avez votre infrastructure",
-        "title": "Hébergez la boutique chez vous",
-        "p": "Serveurs internes ou cloud déjà en place : la boutique et ses données rejoignent le reste de votre système d'information, au même endroit."
+        "title": "Chez vous",
+        "p": "Sur vos serveurs ou votre cloud, votre boutique rejoint le reste de votre système d'information."
       },
       {
         "tag": "Vous êtes accompagné",
-        "title": "Votre agence vous conseille",
-        "p": "L'agence qui monte votre boutique vous recommande l'hébergement adapté à votre trafic, à votre budget et à vos contraintes."
+        "title": "Profitez de conseils",
+        "p": "Votre partenaire recommande l'hébergement adapté à votre trafic, à votre budget et à vos contraintes."
       }
     ],
-    "promiseTitle": "Dans tous les cas",
+    "promiseTitle": "Ce que vous gardez",
     "promiseItems": [
-      "Vos données restent les vôtres, sans dépendance à un éditeur",
-      "Vous pouvez les migrer vers un autre hébergeur sans difficulté",
-      "Vous hébergez en Europe et respectez le RGPD et les normes européennes"
+      "Vos données, sans dépendance à un éditeur",
+      "La liberté de changer d'hébergeur",
+      "Un hébergement en Europe, conforme au RGPD"
     ]
   },
-  "paths": {
-    "title": "Pour votre e-commerce, deux façons de démarrer",
-    "specialistWho": "Vous êtes un e-commerce ou chef de projet",
-    "specialistTitle": "Confiez le projet à une agence",
-    "specialistItems": [
-      "Une agence Sylius cadre le périmètre avec vous et s'engage sur un prix.",
-      "Une boutique sur mesure est livrée en quelques jours.",
-      "Migration, maintenance et formation sont proposées selon le projet."
-    ],
-    "specialistCta": "Voir les offres",
-    "devWho": "Vous êtes développeur, assisté ou non de l'IA",
-    "devTitle": "Lancez le projet vous-même",
-    "devItems": [
-      "Clonez le dépôt et lancez <code>castor sylius:init</code>.",
-      "Import du catalogue, plugins et déploiement sont déjà intégrés.",
-      "La documentation est écrite autant pour les humains que pour les agents IA."
-    ],
-    "devCtaRepo": "Cloner le dépôt ↗",
-    "devCtaDoc": "Lire la documentation ↗"
-  },
   "found": {
-    "title": "Ce que fait Sylius Starter",
-    "leadHtml": "Sylius Starter est un ensemble de commandes Castor (<a href=\"https://castor.jolicode.com\" target=\"_blank\" rel=\"noopener\">mais qu'est-ce que Castor au fait ?</a>) autour d'un projet Sylius standard. Vous bootstrapez un projet, puis vous ajoutez ou retirez des fonctionnalités au fur et à mesure des besoins.",
+    "leadHtml": "Sylius Starter est un ensemble de commandes Castor (<a href=\"https://castor.jolicode.com\" target=\"_blank\" rel=\"noopener\">mais qu'est-ce que Castor au fait ?</a>) autour d'un projet Sylius standard. Vous créez un projet, puis vous ajoutez ou retirez des fonctionnalités au fil des besoins. Votre projet reste standard : n'importe quelle équipe Symfony sait le reprendre.",
+    "dev": {
+      "title": "Vous êtes développeur ?"
+    },
     "feats": [
       {
         "html": "<code>sylius:init</code> crée le projet : Docker, Sylius, base de données, assets, fixtures et tests."
@@ -131,23 +116,19 @@
     ]
   },
   "ecosystem": {
-    "title": "Bâti sur Sylius et Symfony",
-    "intro": "Sylius est une plateforme e-commerce open source construite sur Symfony. Sylius Starter n'ajoute pas de couche propriétaire : votre projet reste un projet Sylius standard, que n'importe quelle équipe Symfony sait reprendre.",
+    "title": "Une base qui a fait ses preuves",
+    "intro": "Sylius fait tourner des boutiques exigeantes depuis plus de dix ans. Une expertise e‑commerce et un historique de projets que peu de solutions peuvent montrer.",
     "link": "Découvrir Sylius ↗",
     "benefits": [
       {
-        "title": "Des agences et des indépendants",
-        "p": "Plusieurs agences et développeurs indépendants travaillent déjà sur Sylius. Pas besoin de développer vous-même, vous choisissez avec qui travailler."
-      },
-      {
-        "title": "Pas de dépendance à un prestataire",
-        "p": "Le code suit les conventions Symfony. Une autre équipe peut prendre le relais sans tout réécrire."
-      },
-      {
-        "title": "Hébergé où vous voulez",
-        "p": "Un serveur dédié, un cloud européen ou votre propre infrastructure : Sylius Starter ne vous impose rien."
+        "title": "Communautaire",
+        "p": "Des partenaires, des éditeurs de solutions et des indépendants font vivre le projet."
       }
     ]
+  },
+  "supporters": {
+    "label": "Ils soutiennent Sylius Starter",
+    "logos": []
   },
   "event": {
     "date": "Novembre 2026",
@@ -155,32 +136,41 @@
     "p": "Le premier événement open source commun à PrestaShop et Sylius : ateliers, conférences techniques et retours d'expérience. Passez nous voir pour parler de votre projet.",
     "cta": "Programme du PS Summit ↗"
   },
+  "solutions": {
+    "title": "Les solutions dont votre boutique a besoin, déjà branchées",
+    "intro": "Paiement, redirections, suivi du trafic : les solutions de nos partenaires s'ajoutent à votre boutique en une commande, déjà configurées.",
+    "cards": [
+      {
+        "title": "redirection.io",
+        "p": "Gardez votre référencement intact quand vous changez de boutique, et gérez vos redirections sans toucher au code."
+      },
+      {
+        "title": "Paiement",
+        "p": "Encaissez avec le moyen de paiement de votre choix, sans commission supplémentaire de la plateforme."
+      }
+    ],
+    "cta": "Voir toutes les solutions",
+    "joinText": "Vous éditez une solution ? Rejoignez Sylius Starter.",
+    "joinCta": "Participer →"
+  },
   "offer": {
-    "title": "Travailler avec une agence partenaire",
-    "intro": "Les prestations sont assurées par des agences Sylius indépendantes. Vous traitez directement avec elles.",
+    "title": "Travailler avec un partenaire",
+    "intro": "Les prestations sont assurées par des partenaires Sylius indépendants. Vous traitez directement avec eux.",
     "plans": [
       {
         "name": "Boutique sur mesure",
-        "price": "Prix fixe",
-        "desc": "L'agence assemble votre boutique à partir des modules du Starter : thème, tunnel de commande, paiement, livraison, recherche. Le périmètre et le prix sont fixés au départ, et la boutique est en ligne en quelques jours.",
-        "cta": "Parler à une agence",
-        "ctaStyle": "primary"
+        "price": "Périmètre et prix cadrés au départ",
+        "desc": "Votre partenaire monte votre boutique avec Sylius Starter : parcours de commande, paiement, livraison, recherche, design à vos couleurs. Elle est en ligne en quelques jours."
       },
       {
+        "id": "migration",
         "name": "Migration",
         "price": "Sur devis",
-        "desc": "Audit de l'existant, reprise des données et bascule depuis votre plateforme actuelle. Le chiffrage dépend du volume et des intégrations.",
-        "cta": "Décrire mon projet",
-        "ctaStyle": "ghost"
-      },
-      {
-        "name": "Maintenance et formation",
-        "price": "Forfait ou abonnement",
-        "desc": "Maintenance corrective et évolutive, et formation de votre équipe pour utiliser au mieux votre boutique.",
-        "cta": "En savoir plus",
-        "ctaStyle": "ghost"
+        "desc": "Audit de votre boutique actuelle, reprise de vos produits, clients et commandes, bascule sans perdre votre référencement. Le chiffrage dépend du volume et des intégrations."
       }
-    ]
+    ],
+    "note": "Maintenance et formation sont proposées par les partenaires selon votre projet.",
+    "cta": "Trouver un partenaire"
   },
   "footer": {
     "product": "Le projet",

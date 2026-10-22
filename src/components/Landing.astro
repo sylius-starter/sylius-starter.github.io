@@ -11,30 +11,67 @@ const { locale, t } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const asset = (path: string) => `${base}/${path.replace(/^\//, '')}`;
 const repo = 'https://github.com/sylius-starter/sylius-starter';
-const skeleton = 'https://github.com/sylius-starter/skeleton';
 const docs = 'https://sylius-starter.github.io/docs/';
+// Friends of Sylius: drives the banner, the hero and partners "Trouver un partenaire" buttons
+// and the Solutions "Participer" link. Set to '' to hide them all at once.
+const friendsOfSylius = 'https://github.com/FriendsOfSylius';
+// "Voir toutes les solutions" destination: hidden while empty.
+const allSolutions = '';
 ---
 
-<div class="announce" role="note">
-  <div class="wrap announce-in">
-    <span class="announce-tag">{t.announce.tag}</span>
-    <p set:html={t.announce.textHtml} />
+{friendsOfSylius && (
+  <div class="announce" role="note">
+    <div class="wrap announce-in">
+      <span class="announce-tag">{t.announce.tag}</span>
+      <p><Fragment set:html={t.announce.textHtml} /> <a href={friendsOfSylius} target="_blank" rel="noopener" class="announce-link">{t.announce.cta}</a></p>
+    </div>
   </div>
-</div>
+)}
 
 <nav>
   <div class="wrap nav-in">
     <a href="#top" class="brand">Sylius Starter<span class="dot"></span></a>
     <div class="nav-links">
-      <a href="#saas-vs-sylius">{t.nav.posseder}</a>
-      <a href="#votre-projet">{t.nav.paths}</a>
-      <a href="#fondation">{t.nav.starter}</a>
-      <a href="#ecosysteme">{t.nav.ecosystem}</a>
+      <a href="#pourquoi">{t.nav.why}</a>
+      <a href="#souverainete">{t.nav.sovereignty}</a>
+      <a href="#solutions">{t.nav.solutions}</a>
+      <a href="#partenaires">{t.nav.partners}</a>
+      <a href="#developpeurs">{t.nav.developers}</a>
       <a href={repo} target="_blank" rel="noopener" class="btn btn-ghost nav-github">{t.nav.github}</a>
-      <a href="#offre" class="btn btn-primary nav-cta">{t.nav.cta}</a>
+      <a href="#partenaires" class="btn btn-primary nav-cta">{t.nav.cta}</a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label={t.nav.menu}>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="nav-panel" id="nav-panel" hidden>
+    <div class="wrap">
+      <a href="#pourquoi">{t.nav.why}</a>
+      <a href="#souverainete">{t.nav.sovereignty}</a>
+      <a href="#solutions">{t.nav.solutions}</a>
+      <a href="#partenaires">{t.nav.partners}</a>
+      <a href="#developpeurs">{t.nav.developers}</a>
+      <a href={repo} target="_blank" rel="noopener">{t.nav.github}</a>
+      <a href="#partenaires" class="btn btn-primary">{t.nav.cta}</a>
     </div>
   </div>
 </nav>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('.nav-toggle');
+  const panel = document.getElementById('nav-panel');
+  if (toggle && panel) {
+    const setOpen = (open: boolean) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      panel.hidden = !open;
+    };
+    toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+    panel.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') setOpen(false);
+    });
+  }
+</script>
 
 <header class="hero" id="top">
   <div class="wrap hero-grid">
@@ -42,8 +79,8 @@ const docs = 'https://sylius-starter.github.io/docs/';
       <h1>{t.hero.title}</h1>
       <p class="lead" set:html={t.hero.leadHtml} />
       <div class="hero-cta">
-        <a href="#offre" class="btn btn-primary">{t.hero.cta}</a>
-        <a href={repo} target="_blank" rel="noopener" class="btn btn-ghost">{t.hero.ctaRepo}</a>
+        {friendsOfSylius && <a href={friendsOfSylius} target="_blank" rel="noopener" class="btn btn-primary">{t.hero.cta}</a>}
+        <a href="#solutions" class:list={['btn', friendsOfSylius ? 'btn-ghost' : 'btn-primary']}>{t.hero.ctaSolutions}</a>
       </div>
     </div>
 
@@ -62,7 +99,7 @@ const docs = 'https://sylius-starter.github.io/docs/';
   </div>
 </header>
 
-<section class="own-sec sec-muted" id="saas-vs-sylius">
+<section class="own-sec sec-muted" id="pourquoi">
   <div class="wrap">
     <div class="section-head">
       <h2>{t.own.title}</h2>
@@ -70,14 +107,6 @@ const docs = 'https://sylius-starter.github.io/docs/';
     </div>
 
     <div class="split">
-      <div class="side rent">
-        <h3>{t.own.rentTitle}</h3>
-        <ul class="plist">
-          {t.own.rentItems.map((item) => (
-            <li><span class="mark">✕</span><span class="t">{item}</span></li>
-          ))}
-        </ul>
-      </div>
       <div class="side own">
         <h3>{t.own.ownTitle}</h3>
         <ul class="plist">
@@ -86,10 +115,18 @@ const docs = 'https://sylius-starter.github.io/docs/';
           ))}
         </ul>
       </div>
+      <div class="side sub">
+        <h3>{t.own.rentTitle}</h3>
+        <ul class="plist">
+          {t.own.rentItems.map((item) => (
+            <li><span class="mark">✕</span><span class="t">{item}</span></li>
+          ))}
+        </ul>
+      </div>
     </div>
 
     <div class="own-cta">
-      <a href="#offre" class="btn btn-em">{t.own.migrate}</a>
+      <a href="#migration" class="btn btn-em">{t.own.migrate}</a>
     </div>
   </div>
 </section>
@@ -122,45 +159,106 @@ const docs = 'https://sylius-starter.github.io/docs/';
   </div>
 </section>
 
-<section class="paths-sec sec-muted" id="votre-projet">
+<section class="experts sec-muted" id="fiabilite">
   <div class="wrap">
-    <div class="section-head">
-      <h2>{t.paths.title}</h2>
-    </div>
-
-    <div class="split">
-      <div class="side rent">
-        <p class="path-who">{t.paths.devWho}</p>
-        <h3>{t.paths.devTitle}</h3>
-        <ul class="plist">
-          {t.paths.devItems.map((item) => (
-            <li><span class="mark">→</span><span class="t" set:html={item} /></li>
-          ))}
-        </ul>
-        <div class="side-cta">
-          <a href={skeleton} target="_blank" rel="noopener" class="btn btn-primary">{t.paths.devCtaRepo}</a>
-          <a href={docs} target="_blank" rel="noopener" class="btn btn-light">{t.paths.devCtaDoc}</a>
-        </div>
+    <div class="exp-grid">
+      <div class="section-head">
+        <h2>{t.ecosystem.title}</h2>
+        <p class="intro">{t.ecosystem.intro}</p>
+        <p class="exp-link"><a href="https://sylius.com" target="_blank" rel="noopener">{t.ecosystem.link}</a></p>
       </div>
-      <div class="side own">
-        <p class="path-who">{t.paths.specialistWho}</p>
-        <h3>{t.paths.specialistTitle}</h3>
-        <ul class="plist">
-          {t.paths.specialistItems.map((item) => (
-            <li><span class="mark">→</span><span class="t">{item}</span></li>
-          ))}
-        </ul>
-        <div class="side-cta"><a href="#offre" class="btn btn-em">{t.paths.specialistCta}</a></div>
+
+      <div class="benefits">
+        {t.ecosystem.benefits.map((b) => (
+          <div class="benefit">
+            <span class="bk">{b.title}</span>
+            <p>{b.p}</p>
+          </div>
+        ))}
       </div>
     </div>
   </div>
 </section>
 
-<section class="found sec-dark" id="fondation">
+{t.supporters.logos.length > 0 && (
+  <section class="logos-sec" aria-label={t.supporters.label}>
+    <div class="wrap logos-in">
+      <p class="logos-label">{t.supporters.label}</p>
+      <div class="logos-row">
+        {t.supporters.logos.map((logo) => (
+          <a href={logo.url} target="_blank" rel="noopener" class="logo-mark">
+            <img src={asset(logo.src)} alt={logo.name} loading="lazy" />
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<section class="sol-sec" id="solutions">
   <div class="wrap">
     <div class="section-head">
-      <h2>{t.found.title}</h2>
+      <h2>{t.solutions.title}</h2>
+      <p class="intro">{t.solutions.intro}</p>
     </div>
+
+    <div class="sov-grid">
+      {t.solutions.cards.map((card) => (
+        <div class="sov-card">
+          <h3>{card.title}</h3>
+          <p>{card.p}</p>
+        </div>
+      ))}
+    </div>
+
+    {allSolutions && (
+      <div class="sol-cta">
+        <a href={allSolutions} target="_blank" rel="noopener" class="btn btn-primary">{t.solutions.cta}</a>
+      </div>
+    )}
+
+    {friendsOfSylius && (
+      <p class="sol-join">
+        {t.solutions.joinText} <a href={friendsOfSylius} target="_blank" rel="noopener">{t.solutions.joinCta}</a>
+      </p>
+    )}
+  </div>
+</section>
+
+<section class="offer sec-muted" id="partenaires">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>{t.offer.title}</h2>
+      <p class="intro">{t.offer.intro}</p>
+    </div>
+
+    <div class="plans">
+      {t.offer.plans.map((plan) => (
+        <div class="plan" id={plan.id}>
+          <div class="name">
+            <h3>{plan.name}</h3>
+            <span class="price">{plan.price}</span>
+          </div>
+          <p class="desc">{plan.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <p class="offer-note">{t.offer.note}</p>
+    {friendsOfSylius && (
+      <div class="offer-cta">
+        <a href={friendsOfSylius} target="_blank" rel="noopener" class="btn btn-primary">{t.offer.cta}</a>
+      </div>
+    )}
+  </div>
+</section>
+
+<section class="found sec-dark" id="developpeurs">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>{t.found.dev.title}</h2>
+    </div>
+
     <div class="grid">
       <div>
         <p class="lead" set:html={t.found.leadHtml} />
@@ -195,27 +293,7 @@ const docs = 'https://sylius-starter.github.io/docs/';
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<section class="experts sec-muted" id="ecosysteme">
-  <div class="wrap">
-    <div class="exp-grid">
-      <div class="section-head">
-        <h2>{t.ecosystem.title}</h2>
-        <p class="intro">{t.ecosystem.intro}</p>
-        <p class="exp-link"><a href="https://sylius.com" target="_blank" rel="noopener">{t.ecosystem.link}</a></p>
-      </div>
-
-      <div class="benefits">
-        {t.ecosystem.benefits.map((b) => (
-          <div class="benefit">
-            <span class="bk">{b.title}</span>
-            <p>{b.p}</p>
-          </div>
-        ))}
-      </div>
-    </div>
   </div>
 </section>
 
@@ -232,35 +310,6 @@ const docs = 'https://sylius-starter.github.io/docs/';
   </div>
 </section>
 
-<section class="offer sec-muted" id="offre">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>{t.offer.title}</h2>
-      <p class="intro">{t.offer.intro}</p>
-    </div>
-
-    <div class="plans">
-      {t.offer.plans.map((plan) => (
-        <div class="plan">
-          <div class="name">
-            <h3>{plan.name}</h3>
-            <span class="price">{plan.price}</span>
-          </div>
-          <p class="desc">{plan.desc}</p>
-          <div class="act">
-            <a
-              href="https://sylius.com/find-a-partner/"
-              target="_blank"
-              rel="noopener"
-              class:list={['btn', plan.ctaStyle === 'primary' ? 'btn-primary' : 'btn-ghost']}
-            >{plan.cta}</a>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
 <footer>
   <div class="wrap">
     <div class="foot">
@@ -271,11 +320,11 @@ const docs = 'https://sylius-starter.github.io/docs/';
       <div class="cols">
         <div class="col">
           <h4>{t.footer.product}</h4>
-          <a href="#saas-vs-sylius">{t.nav.posseder}</a>
-          <a href="#votre-projet">{t.nav.paths}</a>
-          <a href="#fondation">{t.nav.starter}</a>
-          <a href="#ecosysteme">{t.nav.ecosystem}</a>
-          <a href="#offre">{t.nav.cta}</a>
+          <a href="#pourquoi">{t.nav.why}</a>
+          <a href="#souverainete">{t.nav.sovereignty}</a>
+          <a href="#solutions">{t.nav.solutions}</a>
+          <a href="#partenaires">{t.nav.partners}</a>
+          <a href="#developpeurs">{t.nav.developers}</a>
         </div>
         <div class="col">
           <h4>{t.footer.resources}</h4>
