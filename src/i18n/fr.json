@@ -14,7 +14,7 @@
   },
   "announce": {
     "tag": "Nouveau",
-    "textHtml": "Rejoignez-nous, Sylius Starter se construit ensemble."
+    "textHtml": "Contributeurs : rejoignez-nous, Sylius Starter se construit ensemble."
   },
   "nav": {
     "why": "Pourquoi Sylius Starter",
@@ -84,9 +84,6 @@
         "html": "<code>sylius:theme:setup</code> change tout le thème de la boutique, en retirant d'abord le précédent."
       },
       {
-        "html": "<code>sylius:b2b:enable</code> active des fonctionnalités B2B, comme le masquage des prix."
-      },
-      {
         "html": "<code>sylius:menu:remove</code> masque les entrées du back-office dont vous n'avez pas besoin."
       }
     ],
@@ -102,10 +99,7 @@
       { "type": "ok", "text": "fonctionnalité retirée" },
       { "type": "cmd", "text": "castor sylius:theme:setup canvas" },
       { "type": "dim", "text": "change tout le thème de la boutique" },
-      { "type": "ok", "text": "thème activé" },
-      { "type": "cmd", "text": "castor sylius:b2b:enable hide_prices" },
-      { "type": "dim", "text": "active une fonctionnalité B2B" },
-      { "type": "ok", "text": "fonctionnalité B2B activée" }
+      { "type": "ok", "text": "thème activé" }
     ]
   },
   "ecosystem": {
