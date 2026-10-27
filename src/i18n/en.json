@@ -14,23 +14,18 @@
   },
   "announce": {
     "tag": "New",
-    "textHtml": "Partners, solution vendors, freelancers, contributors: Sylius Starter is built together."
+    "textHtml": "Join us, Sylius Starter is built together."
   },
   "nav": {
     "why": "Why Sylius Starter",
     "sovereignty": "Sovereignty",
-    "solutions": "Solutions",
-    "partners": "Partners",
     "developers": "Developers",
     "github": "GitHub ↗",
-    "cta": "Find a partner",
     "menu": "Menu"
   },
   "hero": {
     "title": "Your sovereign e‑commerce store, ready in a few days.",
     "leadHtml": "Sylius Starter is a command-line tool that creates your complete e‑commerce store, ready to be tailored by your team or a partner. Host it wherever you like, <strong>with no commission on your sales</strong>.",
-    "cta": "Find a partner",
-    "ctaSolutions": "See the solutions",
     "alt": "Example Sylius store: product page"
   },
   "own": {
@@ -49,8 +44,7 @@
       "Your store and your data belong to you",
       "Switch partner, host or solution whenever you want",
       "Adjust the features to your business"
-    ],
-    "migrate": "Already have a store? We'll help you migrate"
+    ]
   },
   "sovereignty": {
     "title": "A sovereign store",
@@ -134,40 +128,6 @@
     "title": "Meet us at PS Summit",
     "p": "The first open source event shared by PrestaShop and Sylius: workshops, technical talks and case studies. Come and talk to us about your project.",
     "cta": "PS Summit programme ↗"
-  },
-  "solutions": {
-    "title": "The solutions your store needs, already plugged in",
-    "intro": "Payment, redirects, traffic analytics: our partners' solutions are added to your store in one command, already configured.",
-    "cards": [
-      {
-        "title": "redirection.io",
-        "p": "Keep your search rankings intact when you change stores, and manage your redirects without touching the code."
-      },
-      {
-        "title": "Payment",
-        "p": "Get paid with the payment method of your choice, with no extra platform commission."
-      }
-    ],
-    "cta": "See all solutions",
-    "joinText": "Do you build a solution? Join Sylius Starter."
-  },
-  "offer": {
-    "title": "Working with a partner",
-    "intro": "Services are delivered by independent Sylius partners. You deal with them directly.",
-    "plans": [
-      {
-        "name": "Custom store",
-        "price": "Scope and price set upfront",
-        "desc": "Your partner builds your store with Sylius Starter: checkout, payment, shipping, search, design in your colours. It's live in a few days."
-      },
-      {
-        "id": "migration",
-        "name": "Migration",
-        "price": "On quote",
-        "desc": "Audit of your current store, transfer of your products, customers and orders, and a switchover without losing your search rankings. Pricing depends on volume and integrations."
-      }
-    ],
-    "note": "Maintenance and training are offered by partners depending on your project."
   },
   "footer": {
     "product": "The project",

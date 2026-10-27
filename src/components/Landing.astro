@@ -12,14 +12,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const asset = (path: string) => `${base}/${path.replace(/^\//, '')}`;
 const repo = 'https://github.com/sylius-starter/skeleton';
 const docs = 'https://sylius-starter.github.io/docs/';
-// "Voir toutes les solutions" destination: hidden while empty.
-const allSolutions = '';
-const partnerLogos = [
-  { name: 'Emagma', src: 'images/logo/emagma.svg', url: 'https://www.emagma.fr' },
-  { name: 'JoliCode', src: 'images/logo/jolicode.svg', url: 'https://jolicode.com' },
-  { name: 'Monsieur Biz', src: 'images/logo/monsieurbiz.svg', url: 'https://monsieurbiz.com' },
-  { name: 'redirection.io', src: 'images/logo/redirectionio.svg', url: 'https://redirection.io' },
-];
 ---
 
 <div class="announce" role="note">
@@ -35,11 +27,9 @@ const partnerLogos = [
     <div class="nav-links">
       <a href="#pourquoi">{t.nav.why}</a>
       <a href="#souverainete">{t.nav.sovereignty}</a>
-      <a href="#solutions">{t.nav.solutions}</a>
-      <a href="#partenaires">{t.nav.partners}</a>
       <a href="#developpeurs">{t.nav.developers}</a>
       <a href={repo} target="_blank" rel="noopener" class="btn btn-ghost nav-github">{t.nav.github}</a>
-      <a href="#partenaires" class="btn btn-primary nav-cta">{t.nav.cta}</a>
+      <a href={docs} target="_blank" rel="noopener" class="btn btn-primary nav-cta">{t.found.ctaDoc}</a>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label={t.nav.menu}>
         <span></span><span></span><span></span>
       </button>
@@ -49,11 +39,9 @@ const partnerLogos = [
     <div class="wrap">
       <a href="#pourquoi">{t.nav.why}</a>
       <a href="#souverainete">{t.nav.sovereignty}</a>
-      <a href="#solutions">{t.nav.solutions}</a>
-      <a href="#partenaires">{t.nav.partners}</a>
       <a href="#developpeurs">{t.nav.developers}</a>
       <a href={repo} target="_blank" rel="noopener">{t.nav.github}</a>
-      <a href="#partenaires" class="btn btn-primary">{t.nav.cta}</a>
+      <a href={docs} target="_blank" rel="noopener" class="btn btn-primary">{t.found.ctaDoc}</a>
     </div>
   </div>
 </nav>
@@ -80,8 +68,8 @@ const partnerLogos = [
       <h1>{t.hero.title}</h1>
       <p class="lead" set:html={t.hero.leadHtml} />
       <div class="hero-cta">
-        <a href="#partenaires" class="btn btn-primary">{t.hero.cta}</a>
-        <a href="#solutions" class="btn btn-ghost">{t.hero.ctaSolutions}</a>
+        <a href={repo} target="_blank" rel="noopener" class="btn btn-primary">{t.found.ctaGithub}</a>
+        <a href={docs} target="_blank" rel="noopener" class="btn btn-ghost">{t.found.ctaDoc}</a>
       </div>
     </div>
 
@@ -126,9 +114,6 @@ const partnerLogos = [
       </div>
     </div>
 
-    <div class="own-cta">
-      <a href="#migration" class="btn btn-em">{t.own.migrate}</a>
-    </div>
   </div>
 </section>
 
@@ -195,62 +180,6 @@ const partnerLogos = [
     </div>
   </section>
 )}
-
-<section class="sol-sec" id="solutions">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>{t.solutions.title}</h2>
-      <p class="intro">{t.solutions.intro}</p>
-    </div>
-
-    <div class="sov-grid">
-      {t.solutions.cards.map((card) => (
-        <div class="sov-card">
-          <h3>{card.title}</h3>
-          <p>{card.p}</p>
-        </div>
-      ))}
-    </div>
-
-    {allSolutions && (
-      <div class="sol-cta">
-        <a href={allSolutions} target="_blank" rel="noopener" class="btn btn-primary">{t.solutions.cta}</a>
-      </div>
-    )}
-
-    <p class="sol-join">{t.solutions.joinText}</p>
-  </div>
-</section>
-
-<section class="offer sec-muted" id="partenaires">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>{t.offer.title}</h2>
-      <p class="intro">{t.offer.intro}</p>
-    </div>
-
-    <div class="plans">
-      {t.offer.plans.map((plan) => (
-        <div class="plan" id={plan.id}>
-          <div class="name">
-            <h3>{plan.name}</h3>
-            <span class="price">{plan.price}</span>
-          </div>
-          <p class="desc">{plan.desc}</p>
-        </div>
-      ))}
-    </div>
-
-    <p class="offer-note">{t.offer.note}</p>
-    <div class="partner-logos">
-      {partnerLogos.map((logo) => (
-        <a href={logo.url} target="_blank" rel="noopener" title={logo.name}>
-          <img src={asset(logo.src)} alt={logo.name} loading="lazy" />
-        </a>
-      ))}
-    </div>
-  </div>
-</section>
 
 <section class="found sec-dark" id="developpeurs">
   <div class="wrap">
@@ -321,8 +250,6 @@ const partnerLogos = [
           <h4>{t.footer.product}</h4>
           <a href="#pourquoi">{t.nav.why}</a>
           <a href="#souverainete">{t.nav.sovereignty}</a>
-          <a href="#solutions">{t.nav.solutions}</a>
-          <a href="#partenaires">{t.nav.partners}</a>
           <a href="#developpeurs">{t.nav.developers}</a>
         </div>
         <div class="col">

@@ -14,23 +14,18 @@
   },
   "announce": {
     "tag": "Nouveau",
-    "textHtml": "Partenaires, éditeurs de solutions, indépendants, contributeurs : Sylius Starter se construit à plusieurs."
+    "textHtml": "Rejoignez-nous, Sylius Starter se construit ensemble."
   },
   "nav": {
     "why": "Pourquoi Sylius Starter",
     "sovereignty": "Souveraineté",
-    "solutions": "Solutions",
-    "partners": "Partenaires",
     "developers": "Développeurs",
     "github": "GitHub ↗",
-    "cta": "Trouver un partenaire",
     "menu": "Menu"
   },
   "hero": {
     "title": "Votre boutique e‑commerce souveraine, prête en quelques jours.",
     "leadHtml": "Sylius Starter est un outil en ligne de commande qui crée votre boutique e‑commerce complète, prête à être adaptée par votre équipe ou un partenaire. Vous l'hébergez où vous voulez, <strong>sans commission sur vos ventes</strong>.",
-    "cta": "Trouver un partenaire",
-    "ctaSolutions": "Voir les solutions",
     "alt": "Exemple de boutique Sylius : page produit"
   },
   "own": {
@@ -49,8 +44,7 @@
       "Votre boutique et vos données vous appartiennent",
       "Vous changez de partenaire, d'hébergeur ou de solution quand vous voulez",
       "Vous ajustez les fonctionnalités à votre activité"
-    ],
-    "migrate": "Vous avez déjà une boutique ? On vous aide à migrer"
+    ]
   },
   "sovereignty": {
     "title": "Une boutique souveraine",
@@ -134,40 +128,6 @@
     "title": "Retrouvez-nous au PS Summit",
     "p": "Le premier événement open source commun à PrestaShop et Sylius : ateliers, conférences techniques et retours d'expérience. Passez nous voir pour parler de votre projet.",
     "cta": "Programme du PS Summit ↗"
-  },
-  "solutions": {
-    "title": "Les solutions dont votre boutique a besoin, déjà branchées",
-    "intro": "Paiement, redirections, suivi du trafic : les solutions de nos partenaires s'ajoutent à votre boutique en une commande, déjà configurées.",
-    "cards": [
-      {
-        "title": "redirection.io",
-        "p": "Gardez votre référencement intact quand vous changez de boutique, et gérez vos redirections sans toucher au code."
-      },
-      {
-        "title": "Paiement",
-        "p": "Encaissez avec le moyen de paiement de votre choix, sans commission supplémentaire de la plateforme."
-      }
-    ],
-    "cta": "Voir toutes les solutions",
-    "joinText": "Vous éditez une solution ? Rejoignez Sylius Starter."
-  },
-  "offer": {
-    "title": "Travailler avec un partenaire",
-    "intro": "Les prestations sont assurées par des partenaires Sylius indépendants. Vous traitez directement avec eux.",
-    "plans": [
-      {
-        "name": "Boutique sur mesure",
-        "price": "Périmètre et prix cadrés au départ",
-        "desc": "Votre partenaire monte votre boutique avec Sylius Starter : parcours de commande, paiement, livraison, recherche, design à vos couleurs. Elle est en ligne en quelques jours."
-      },
-      {
-        "id": "migration",
-        "name": "Migration",
-        "price": "Sur devis",
-        "desc": "Audit de votre boutique actuelle, reprise de vos produits, clients et commandes, bascule sans perdre votre référencement. Le chiffrage dépend du volume et des intégrations."
-      }
-    ],
-    "note": "Maintenance et formation sont proposées par les partenaires selon votre projet."
   },
   "footer": {
     "product": "Le projet",
